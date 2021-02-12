@@ -10,6 +10,7 @@ using Microsoft.Owin.Security.OAuth;
 using Owin;
 using BlueBadgeFinalProject.WebAPI.Providers;
 using BlueBadgeFinalProject.WebAPI.Models;
+using BlueBadgeFinalProject.Data;
 
 namespace BlueBadgeFinalProject.WebAPI
 {

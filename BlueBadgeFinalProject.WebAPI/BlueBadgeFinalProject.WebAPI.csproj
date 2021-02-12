@@ -207,13 +207,17 @@
     <Compile Include="Areas\HelpPage\XmlDocumentationProvider.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\HotelController.cs" />
+    <Compile Include="Controllers\ReviewController.cs" />
+    <Compile Include="Controllers\TransactionController.cs" />
+    <Compile Include="Controllers\UserController.cs" />
+    <Compile Include="Controllers\VacationPackageController.cs" />
     <Compile Include="Controllers\ValuesController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\AccountBindingModels.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
-    <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Providers\ApplicationOAuthProvider.cs" />
     <Compile Include="Results\ChallengeResult.cs" />
@@ -306,6 +310,20 @@
     <None Include="packages.config" />
     <Content Include="Scripts\jquery-3.4.1.slim.min.map" />
     <Content Include="Scripts\jquery-3.4.1.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BlueBadgeFinalProject.Data\BlueBadgeFinalProject.Data.csproj">
+      <Project>{fd2aea57-1559-4bff-91cf-858afc0ca99c}</Project>
+      <Name>BlueBadgeFinalProject.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\BlueBadgeFinalProject.Models\BlueBadgeFinalProject.Models.csproj">
+      <Project>{db08ea7b-bc0d-4f6c-aee3-8f3990c1fb67}</Project>
+      <Name>BlueBadgeFinalProject.Models</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\BlueBadgeFinalProject.Services\BlueBadgeFinalProject.Services.csproj">
+      <Project>{d34facd2-caf0-4d62-a937-ab685fdaf6b9}</Project>
+      <Name>BlueBadgeFinalProject.Services</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
