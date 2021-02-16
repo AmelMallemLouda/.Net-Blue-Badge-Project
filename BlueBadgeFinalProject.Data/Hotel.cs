@@ -12,6 +12,8 @@ namespace BlueBadgeFinalProject.Data
         [Key]
         public int HotelId { get; set; }
         [Required]
+        public Guid OwnerId { get; set; }
+        [Required]
         public string HotelName { get; set; }
         [Required]
         public string Location { get; set; }

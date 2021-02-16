@@ -10,11 +10,11 @@ namespace BlueBadgeFinalProject.Models.HotelModels
     public class HotelCreate
     {
         [Required]
-        public int Name { get; set; }
+        public string Name { get; set; }
 
         [Required]
         [MinLength(10, ErrorMessage = "Please enter at least 10 characters.")]
-        public int Location { get; set; }
+        public string Location { get; set; }
         [Required]
         public bool HasFreeParking { get; set; }
 
