@@ -62,9 +62,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="HotelModels\" />
-    <Folder Include="ReviewModels\" />
-    <Folder Include="TransactionModels\" />
-    <Folder Include="VacationPackageModels\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

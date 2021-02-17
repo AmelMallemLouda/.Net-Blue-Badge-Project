@@ -56,9 +56,6 @@
   <ItemGroup>
     <Compile Include="HotelService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="ReviewService.cs" />
-    <Compile Include="TransactionService.cs" />
-    <Compile Include="VacationPackageService.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
