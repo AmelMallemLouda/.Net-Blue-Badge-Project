@@ -35,6 +35,7 @@ namespace BlueBadgeFinalProject.Services
                 return ctx.SaveChanges() == 1;
             }
         }
+
         public IEnumerable<TransactionListItem> GetTransactions()
         {
             using (var ctx = new ApplicationDbContext())
