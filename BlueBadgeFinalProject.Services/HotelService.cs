@@ -75,6 +75,7 @@ namespace BlueBadgeFinalProject.Services
             using (var ctx = new ApplicationDbContext())
             {
                 var entity = ctx.Hotels.Single(e => e.HotelId ==hotel.HotelId && e.OwnerId == _UserId);
+                entity.HotelId = hotel.HotelId;
                 entity.HotelName = hotel.Name;
                 entity.Location = hotel.Location;
                 entity.HasFreeParking = hotel.HasFreeParking;
