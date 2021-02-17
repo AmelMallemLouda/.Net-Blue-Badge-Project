@@ -57,5 +57,56 @@ namespace BlueBadgeFinalProject.Services
                 return query.ToArray();
             }
         }
-    }
+
+        public TransactionDetail GetTransactionById(int transactionId)
+        {
+            using (var ctx = new ApplicationDbContext())
+            {
+                var entity =
+                    ctx
+                        .Transactions
+                        .Single(e => e.TransactionId == transactionId && e.OwnerId == _userId);
+                return
+                    new TransactionDetail
+                    {
+                        TransactionId = entity.TransactionId,
+                        CustomerName = entity.CustomerName,
+                        Price = entity.Price,
+                        DateOfTransaction = entity.DateOfTransaction
+                    };
+            }
+        }
+
+        public bool UpdateTransaction(TransactionEdit model)
+        {
+            using (var ctx = new ApplicationDbContext())
+            {
+                var entity =
+                    ctx
+                        .Transactions
+                        .Single(e => e.TransactionId == model.TransactionId && e.OwnerId == _userId);
+
+                entity.TransactionId = model.TransactionId;
+                entity.Price = model.Price;
+                entity.CustomerName = model.CustomerName;
+
+                return ctx.SaveChanges() == 1;
+            }
+        }
+
+        public bool DeleteTransaction(int transactionId)
+        {
+            using (var ctx = new ApplicationDbContext())
+            {
+                var entity =
+                    ctx
+                        .Transactions
+                        .Single(e => e.TransactionId == transactionId && e.OwnerId == _userId);
+
+                ctx.Transactions.Remove(entity);
+
+                return ctx.SaveChanges() == 1;
+            }
+        }
+   }
 }
