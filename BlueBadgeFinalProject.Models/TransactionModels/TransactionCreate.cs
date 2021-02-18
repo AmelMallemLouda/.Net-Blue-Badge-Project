@@ -11,7 +11,7 @@ namespace BlueBadgeFinalProject.Models.TransactionModels
     {
         [Required]
         [MinLength(1, ErrorMessage = "Please enter at least 1 character.")]
-        [MaxLength(16, ErrorMessage = "There are too many characters in this field.")]
+        [MaxLength(20, ErrorMessage = "There are too many characters in this field.")]
         public string Price { get; set; }
         public string CustomerName { get; set; }
     }

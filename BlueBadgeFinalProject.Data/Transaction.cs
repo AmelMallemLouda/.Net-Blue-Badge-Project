@@ -27,5 +27,9 @@ namespace BlueBadgeFinalProject.Data
         public int HotelId { get; set; }
         public virtual Hotel Hotel { get; set; }
          */
+
+        /*[ForeignKey(nameof(Customer))]
+        public int CustomerId { get; set; }
+        public virtual Customer Customer { get; set; }*/
     }
 }

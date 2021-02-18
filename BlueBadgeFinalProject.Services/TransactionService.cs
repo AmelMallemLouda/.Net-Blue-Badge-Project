@@ -55,7 +55,7 @@ namespace BlueBadgeFinalProject.Services
                                 }
                         );
 
-                return query.ToArray();
+                return query.ToArray(); 
             }
         }
 
