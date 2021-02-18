@@ -33,7 +33,7 @@ namespace BlueBadgeFinalProject.Data
             return new ApplicationDbContext();
         }
         public DbSet<Hotel> Hotels { get; set; }
-        //public DbSet<Note> Notes {get;set;}
+        public DbSet<Customer>Customers { get; set; }
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             modelBuilder
