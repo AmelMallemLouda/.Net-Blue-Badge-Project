@@ -59,16 +59,24 @@
     <Compile Include="HotelModels\HotelEdit.cs" />
     <Compile Include="HotelModels\HotelList.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TransactionModels\TransactionCreate.cs" />
+    <Compile Include="TransactionModels\TransactionDetail.cs" />
+    <Compile Include="TransactionModels\TransactionEdit.cs" />
+    <Compile Include="TransactionModels\TransactionListItem.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
+<<<<<<< HEAD
+  <ItemGroup />
+=======
   <ItemGroup>
     <Folder Include="ReviewModels\" />
     <Folder Include="TransactionModels\" />
     <Folder Include="UserModels\" />
     <Folder Include="VacationPackageModels\" />
   </ItemGroup>
+>>>>>>> origin/Develop
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
