@@ -60,30 +60,26 @@ namespace BlueBadgeFinalProject.Services
 
             return query.ToArray();
             }
-            ////Comments = entity.Comments.Select(
-            //x => new CommentListItem
-            //{
-            //    CommentId = x.CommentId,
-            //    Text = x.Text,
-
-            //}).ToList()
 
         }
 
 
         public HotelDetails GetHotelByID(int Id)
         {
-            using (var ctx = new ApplicationDbContext())
-            {
-                var entity = ctx.Hotels.Single(e => e.HotelId == Id && e.OwnerId == _UserId);
-                return new HotelDetails
+            
+            
+
+                using (var ctx = new ApplicationDbContext())
                 {
-                    HotelId = entity.HotelId,
-                    HotelName = entity.HotelName,
-                    Location = entity.Location,
-                    HasFreeParking = entity.HasFreeParking
-                };
-            }
+                    var entity = ctx.Hotels.Single(e => e.HotelId == Id && e.OwnerId == _UserId);
+                    return new HotelDetails
+                    {
+                        HotelId = entity.HotelId,
+                        HotelName = entity.HotelName,
+                       
+                    };
+
+                }
         }
 
         public bool UpdateHotel(HotelEdit hotel)

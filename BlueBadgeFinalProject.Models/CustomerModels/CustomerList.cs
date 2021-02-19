@@ -10,6 +10,7 @@ namespace BlueBadgeFinalProject.Models.CustomerFolder
     {
         public int CustomerId { get; set; }
         public  string FullName { get; set; }
-       
+       // public int HotelId { get; set; }
+
     }
 }

@@ -27,7 +27,9 @@ namespace BlueBadgeFinalProject.Services
                 LastName = customer.LastName,
                 PhoneNumber = customer.PhoneNumber,
                 EmailAddress = customer.EmailAddress,
-                HasMenmberShip = customer.HasMemberShip
+                HasMenmberShip = customer.HasMemberShip,
+                HotelId=customer.HotelId
+                
             };
             using (var ctx=new ApplicationDbContext())
             {
@@ -65,7 +67,8 @@ namespace BlueBadgeFinalProject.Services
                     FullName=entity.FirstName+" "+ entity.LastName,
                     PhoneNumber = entity.PhoneNumber,
                     EmailAddress = entity.EmailAddress,
-                    HasMemberShip = entity.HasMenmberShip
+                    HasMemberShip = entity.HasMenmberShip,
+                   HotelId=entity.HotelId
                 };
             }
         }
@@ -81,7 +84,7 @@ namespace BlueBadgeFinalProject.Services
                 entity.EmailAddress = customer.EmailAddress;
                 entity.PhoneNumber = customer.PhoneNumber;
                 entity.HasMenmberShip = customer.HasMemberShip;
-
+                entity.HotelId = customer.HotelId;
                 return ctx.SaveChanges() == 1;
             }
         }

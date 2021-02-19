@@ -26,6 +26,7 @@ namespace BlueBadgeFinalProject.Data
         public string PhoneNumber { get; set; }
         [Required]
         public bool HasMenmberShip { get; set; }
+
         [Required]
         [ForeignKey( nameof(Hotels))]
         public int HotelId { get; set; }

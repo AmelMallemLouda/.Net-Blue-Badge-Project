@@ -24,7 +24,7 @@ namespace BlueBadgeFinalProject.WebAPI.Controllers
             var customers = customerService.GetAllCustomers();
             return Ok(customers);
         }
-        [Route("{api}/{customer}/{Id}")]
+       // [Route("{api}/{customer}/{Id}")]
         public IHttpActionResult GetCustomerById([FromUri] int Id)
         {
             CustomerService customerService = CreateCustomerService();

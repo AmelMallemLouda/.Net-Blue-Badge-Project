@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BlueBadgeFinalProject.Models.CustomerFolder;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -12,7 +13,9 @@ namespace BlueBadgeFinalProject.Models.HotelModels
         public string HotelName { get; set; }
         public string Location { get; set; }
         public bool HasFreeParking { get; set; }
+       // public virtual List<CustomerList> Customers { get; set; } = new List<CustomerList>();
 
-       // public string Package { get; set; } , what kind of package they Offer
+
+        // public string Package { get; set; } , what kind of package they Offer
     }
 }
