@@ -54,6 +54,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CustomerModels\CustomerCreate.cs" />
+    <Compile Include="CustomerModels\CustomerDetails.cs" />
+    <Compile Include="CustomerModels\CustomerEdit.cs" />
+    <Compile Include="CustomerModels\CustomerList.cs" />
     <Compile Include="HotelModels\HotelCreate.cs" />
     <Compile Include="HotelModels\HotelDetails.cs" />
     <Compile Include="HotelModels\HotelEdit.cs" />
@@ -72,10 +76,10 @@
   <ItemGroup />
 =======
   <ItemGroup>
-    <Folder Include="ReviewModels\" />
-    <Folder Include="TransactionModels\" />
-    <Folder Include="UserModels\" />
-    <Folder Include="VacationPackageModels\" />
+    <ProjectReference Include="..\BlueBadgeFinalProject.Data\BlueBadgeFinalProject.Data.csproj">
+      <Project>{fd2aea57-1559-4bff-91cf-858afc0ca99c}</Project>
+      <Name>BlueBadgeFinalProject.Data</Name>
+    </ProjectReference>
   </ItemGroup>
 >>>>>>> origin/Develop
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

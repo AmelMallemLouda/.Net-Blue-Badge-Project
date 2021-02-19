@@ -37,6 +37,7 @@ namespace BlueBadgeFinalProject.WebAPI.Controllers
             return Ok("The Hotel Was Successfully Created.");
         }
 
+        //[Route("{api}/{hotel}/{Id}")]
         public IHttpActionResult GetHotelById([FromUri] int Id)
         {
             HotelService hotelService = CreateHotelService();

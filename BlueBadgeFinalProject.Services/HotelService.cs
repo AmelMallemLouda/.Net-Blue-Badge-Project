@@ -1,4 +1,5 @@
 ﻿using BlueBadgeFinalProject.Data;
+using BlueBadgeFinalProject.Models.CustomerFolder;
 using BlueBadgeFinalProject.Models.HotelModels;
 using System;
 using System.Collections.Generic;
@@ -46,8 +47,16 @@ namespace BlueBadgeFinalProject.Services
                         HotelId = e.HotelId,
                         Name = e.HotelName,
                         Location = e.Location,
+                        Customers = e.Customers.Select(
+                            x => new CustomerList
+                            {
+                                CustomerId = x.CustomerId,
+                                FullName = x.FirstName + " " + x.LastName,
 
-                    });
+                            }).ToList()
+
+
+                    }) ;
 
             return query.ToArray();
             }
@@ -57,17 +66,20 @@ namespace BlueBadgeFinalProject.Services
 
         public HotelDetails GetHotelByID(int Id)
         {
-            using (var ctx = new ApplicationDbContext())
-            {
-                var entity = ctx.Hotels.Single(e => e.HotelId == Id && e.OwnerId == _UserId);
-                return new HotelDetails
+            
+            
+
+                using (var ctx = new ApplicationDbContext())
                 {
-                    HotelId = entity.HotelId,
-                    HotelName = entity.HotelName,
-                    Location = entity.Location,
-                    HasFreeParking = entity.HasFreeParking
-                };
-            }
+                    var entity = ctx.Hotels.Single(e => e.HotelId == Id && e.OwnerId == _UserId);
+                    return new HotelDetails
+                    {
+                        HotelId = entity.HotelId,
+                        HotelName = entity.HotelName,
+                       
+                    };
+
+                }
         }
 
         public bool UpdateHotel(HotelEdit hotel)
