@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -17,7 +18,7 @@ namespace BlueBadgeFinalProject.Data
         public string FirstName { get; set; }
         [Required]
         public string LastName { get; set; }
-        //public virtual string FullName => $"{FirstName} {LastName}";
+       
         [Required]
         public string EmailAddress { get; set; }
         [Required]
@@ -25,5 +26,9 @@ namespace BlueBadgeFinalProject.Data
         public string PhoneNumber { get; set; }
         [Required]
         public bool HasMenmberShip { get; set; }
+        [Required]
+        [ForeignKey( nameof(Hotels))]
+        public int HotelId { get; set; }
+        public virtual Hotel Hotels { get; set; }
     }
 }

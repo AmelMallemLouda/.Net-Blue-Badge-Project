@@ -1,4 +1,5 @@
 ﻿using BlueBadgeFinalProject.Data;
+using BlueBadgeFinalProject.Models.CustomerFolder;
 using BlueBadgeFinalProject.Models.HotelModels;
 using System;
 using System.Collections.Generic;
@@ -46,11 +47,26 @@ namespace BlueBadgeFinalProject.Services
                         HotelId = e.HotelId,
                         Name = e.HotelName,
                         Location = e.Location,
+                        Customers = e.Customers.Select(
+                            x => new CustomerList
+                            {
+                                CustomerId = x.CustomerId,
+                                FullName = x.FirstName + " " + x.LastName,
 
-                    });
+                            }).ToList()
+
+
+                    }) ;
 
             return query.ToArray();
             }
+            ////Comments = entity.Comments.Select(
+            //x => new CommentListItem
+            //{
+            //    CommentId = x.CommentId,
+            //    Text = x.Text,
+
+            //}).ToList()
 
         }
 
