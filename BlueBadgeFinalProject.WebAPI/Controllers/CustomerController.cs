@@ -24,7 +24,7 @@ namespace BlueBadgeFinalProject.WebAPI.Controllers
             var customers = customerService.GetAllCustomers();
             return Ok(customers);
         }
-       // [Route("{api}/{customer}/{Id}")]
+     
         public IHttpActionResult GetCustomerById([FromUri] int Id)
         {
             CustomerService customerService = CreateCustomerService();
@@ -38,7 +38,7 @@ namespace BlueBadgeFinalProject.WebAPI.Controllers
             var service = CreateCustomerService();
             if (!service.CeateCustomer(customer))
                 return InternalServerError();
-            return Ok("The customer has been created");
+            return Ok("The customer has been created.");
         }
 
         public IHttpActionResult Put(CustomerEdit customer)
@@ -48,7 +48,7 @@ namespace BlueBadgeFinalProject.WebAPI.Controllers
             var service = CreateCustomerService();
             if (!service.UpdateCustomerInformations(customer))
                 return InternalServerError();
-            return Ok();
+            return Ok("The customer has been updated.");
         }
         public IHttpActionResult Delete(int customerId)
         {
@@ -57,7 +57,7 @@ namespace BlueBadgeFinalProject.WebAPI.Controllers
             if (!service.DeleteCustomer(customerId))
                 return InternalServerError();
 
-            return Ok("The customer has been deleted");
+            return Ok("The customer has been deleted.");
 
 
         }

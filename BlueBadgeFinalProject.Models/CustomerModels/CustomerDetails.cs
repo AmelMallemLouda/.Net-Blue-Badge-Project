@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BlueBadgeFinalProject.Models.TransactionModels;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
@@ -16,8 +17,9 @@ namespace BlueBadgeFinalProject.Models.CustomerFolder
         public string PhoneNumber { get; set; }
         public bool HasMemberShip { get; set; }
         public int HotelId { get; set; }
+        public virtual List<TransactionListItem> Transactions { get; set; } = new List<TransactionListItem>();
 
-        //public virtual List<Transaction> Transactions {get; set;}
+
         //Public virtual List <Review> Reviews {get; set;}
     }
 }

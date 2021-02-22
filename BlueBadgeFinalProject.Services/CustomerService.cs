@@ -1,5 +1,6 @@
 ﻿using BlueBadgeFinalProject.Data;
 using BlueBadgeFinalProject.Models.CustomerFolder;
+using BlueBadgeFinalProject.Models.TransactionModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -28,7 +29,8 @@ namespace BlueBadgeFinalProject.Services
                 PhoneNumber = customer.PhoneNumber,
                 EmailAddress = customer.EmailAddress,
                 HasMenmberShip = customer.HasMemberShip,
-                HotelId=customer.HotelId
+                HotelId=customer.HotelId,
+                
                 
             };
             using (var ctx=new ApplicationDbContext())
@@ -48,7 +50,15 @@ namespace BlueBadgeFinalProject.Services
                     {
                         FullName =e.FirstName + " " +e.LastName,
                         CustomerId = e.CustomerId,
-                        
+                        Transactions = e.Transactions.Select(
+                          z => new TransactionListItem
+                          {
+                              TransactionId = z.TransactionId,
+                              DateOfTransaction = z.DateOfTransaction,
+        
+                          }).ToList(),
+
+
                     });
                 return entity.ToArray();
                     
@@ -68,7 +78,15 @@ namespace BlueBadgeFinalProject.Services
                     PhoneNumber = entity.PhoneNumber,
                     EmailAddress = entity.EmailAddress,
                     HasMemberShip = entity.HasMenmberShip,
-                   HotelId=entity.HotelId
+                   HotelId=entity.HotelId,
+                    Transactions = entity.Transactions.Select(
+                          z => new TransactionListItem
+                          {
+                              TransactionId = z.TransactionId,
+                              DateOfTransaction = z.DateOfTransaction,
+    
+                          }).ToList(),
+
                 };
             }
         }
@@ -85,6 +103,7 @@ namespace BlueBadgeFinalProject.Services
                 entity.PhoneNumber = customer.PhoneNumber;
                 entity.HasMenmberShip = customer.HasMemberShip;
                 entity.HotelId = customer.HotelId;
+           
                 return ctx.SaveChanges() == 1;
             }
         }

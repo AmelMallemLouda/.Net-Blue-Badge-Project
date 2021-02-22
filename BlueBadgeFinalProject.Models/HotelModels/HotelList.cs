@@ -1,5 +1,6 @@
 ﻿using BlueBadgeFinalProject.Data;
 using BlueBadgeFinalProject.Models.CustomerFolder;
+using BlueBadgeFinalProject.Models.TransactionModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,8 +14,7 @@ namespace BlueBadgeFinalProject.Models.HotelModels
     {
         public int HotelId { get; set; }
         public string Name { get; set; }
-        public string Location { get; set; }
-        public List<CustomerList> Customers { get; set; }
+        public List<CustomerList> Customers { get; set; } = new List<CustomerList>();
 
     }
 }

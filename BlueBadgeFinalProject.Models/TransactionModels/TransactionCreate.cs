@@ -9,10 +9,10 @@ namespace BlueBadgeFinalProject.Models.TransactionModels
 {
     public class TransactionCreate
     {
-        [Required]
-        [MinLength(1, ErrorMessage = "Please enter at least 1 character.")]
-        [MaxLength(20, ErrorMessage = "There are too many characters in this field.")]
-        public string Price { get; set; }
-        public string CustomerName { get; set; }
+       
+
+        public double Price { get; set; }
+        public DateTime DateOfTransaction { get; set; }
+        public int CustomerId { get; set; }
     }
 }

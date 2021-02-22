@@ -16,5 +16,6 @@ namespace BlueBadgeFinalProject.Models.CustomerFolder
         public string EmailAddress { get; set; }
         public bool HasMemberShip { get; set; }
         public int HotelId { get; set; }
+        
     }
 }

@@ -34,10 +34,9 @@ namespace BlueBadgeFinalProject.WebAPI.Controllers
             HotelService hotelService = CreateHotelService();
             if (!hotelService.CreateHotel(hotel))
                 return InternalServerError();
-            return Ok("The Hotel Was Successfully Created.");
+            return Ok("The hotel has been created.");
         }
 
-        //[Route("{api}/{hotel}/{Id}")]
         public IHttpActionResult GetHotelById([FromUri] int Id)
         {
             HotelService hotelService = CreateHotelService();
@@ -56,7 +55,7 @@ namespace BlueBadgeFinalProject.WebAPI.Controllers
             {
                 return InternalServerError();
             }
-            return Ok("The Hotel Was successfully Updated.");
+            return Ok("The hotel has been updated.");
         }
 
         public IHttpActionResult Delete(int Id)
@@ -64,7 +63,7 @@ namespace BlueBadgeFinalProject.WebAPI.Controllers
             var service = CreateHotelService();
             if (!service.DeleteHotel(Id))
                 return InternalServerError();
-            return Ok("The hotel was successfully deleted.");
+            return Ok("The hotel has been deleted.");
         }
 
     }

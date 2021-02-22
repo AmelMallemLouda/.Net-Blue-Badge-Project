@@ -1,5 +1,6 @@
 ﻿using BlueBadgeFinalProject.Data;
 using BlueBadgeFinalProject.Models;
+using BlueBadgeFinalProject.Models.CustomerFolder;
 using BlueBadgeFinalProject.Models.TransactionModels;
 using System;
 using System.Collections.Generic;
@@ -26,7 +27,9 @@ namespace BlueBadgeFinalProject.Services
                     OwnerId = _userId,
                     Price = model.Price,
                     DateOfTransaction = DateTime.Now,
-                    CustomerName = model.CustomerName
+                    CustomerId=model.CustomerId
+                    
+                   
                 };
 
             using (var ctx = new ApplicationDbContext())
@@ -50,10 +53,9 @@ namespace BlueBadgeFinalProject.Services
                                 {
                                     TransactionId = e.TransactionId,
                                     DateOfTransaction = e.DateOfTransaction,
-                                    Price = e.Price,
-                                    CustomerName = e.CustomerName
-                                }
-                        );
+ 
+                                });
+                        
 
                 return query.ToArray(); 
             }
@@ -71,9 +73,10 @@ namespace BlueBadgeFinalProject.Services
                     new TransactionDetail
                     {
                         TransactionId = entity.TransactionId,
-                        CustomerName = entity.CustomerName,
+                       CustomerId=entity.CustomerId,
                         Price = entity.Price,
-                        DateOfTransaction = entity.DateOfTransaction
+                        DateOfTransaction = entity.DateOfTransaction,
+                        ModifiedUtc=entity.ModifiedUtc
                     };
             }
         }
@@ -89,8 +92,8 @@ namespace BlueBadgeFinalProject.Services
 
                 entity.TransactionId = model.TransactionId;
                 entity.Price = model.Price;
-                entity.CustomerName = model.CustomerName;
-
+                entity.CustomerId = model.CustomerId;
+                entity.ModifiedUtc = DateTime.Now;
                 return ctx.SaveChanges() == 1;
             }
         }
