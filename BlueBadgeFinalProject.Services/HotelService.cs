@@ -1,6 +1,7 @@
 ﻿using BlueBadgeFinalProject.Data;
 using BlueBadgeFinalProject.Models.CustomerFolder;
 using BlueBadgeFinalProject.Models.HotelModels;
+using BlueBadgeFinalProject.Models.TransactionModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -46,19 +47,24 @@ namespace BlueBadgeFinalProject.Services
                     {
                         HotelId = e.HotelId,
                         Name = e.HotelName,
-                        Location = e.Location,
+
                         Customers = e.Customers.Select(
                             x => new CustomerList
                             {
                                 CustomerId = x.CustomerId,
                                 FullName = x.FirstName + " " + x.LastName,
-
+                                Transactions = x.Transactions.Select(
+                          z => new TransactionListItem
+                          {
+                              TransactionId = z.TransactionId,
+                              DateOfTransaction = z.DateOfTransaction,
+  
+                          }).ToList(),
                             }).ToList()
 
-
                     }) ;
-
-            return query.ToArray();
+  
+                return query.ToArray();
             }
 
         }
@@ -76,7 +82,23 @@ namespace BlueBadgeFinalProject.Services
                     {
                         HotelId = entity.HotelId,
                         HotelName = entity.HotelName,
-                       
+                        Location=entity.Location,
+                        HasFreeParking=entity.HasFreeParking,
+                        
+                        Customers = entity.Customers.Select(
+                            x => new CustomerList
+                            {
+                                CustomerId = x.CustomerId,
+                                FullName = x.FirstName + " " + x.LastName,
+                                Transactions = x.Transactions.Select(
+                          z => new TransactionListItem
+                          {
+                              TransactionId = z.TransactionId,
+                              DateOfTransaction = z.DateOfTransaction,
+  
+                          }).ToList(),
+                            }).ToList()
+
                     };
 
                 }

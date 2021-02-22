@@ -30,7 +30,7 @@ namespace BlueBadgeFinalProject.WebAPI.Controllers
             if (!service.CreateTransaction(transaction))
                 return InternalServerError();
 
-            return Ok("The transaction has been successfully created!");
+            return Ok("The transaction has been created!");
         }
 
         public IHttpActionResult Get()
@@ -40,7 +40,7 @@ namespace BlueBadgeFinalProject.WebAPI.Controllers
             return Ok(transactions);
         }
 
-        [Route("api/Transaction/GetByTransactionId/{transactionId}")]
+        [Route("api/Transaction/GetTransactionById/{transactionId}")]
         public IHttpActionResult Get(int transactionId)
         {
             TransactionService transactionService = CreateTransactionService();
@@ -58,7 +58,7 @@ namespace BlueBadgeFinalProject.WebAPI.Controllers
             if (!service.UpdateTransaction(transaction))
                 return InternalServerError();
 
-            return Ok("The transaction has been successfully updated!");
+            return Ok("The transaction has been updated!");
         }
 
         [Route("api/Transaction/DeleteTransaction/{transactionId}")]

@@ -18,6 +18,6 @@ namespace BlueBadgeFinalProject.Models.HotelModels
         [Required]
         public bool HasFreeParking { get; set; }
 
-        //public int vacationPackageId {get; set;}
+        
     }
 }

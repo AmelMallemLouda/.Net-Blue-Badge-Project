@@ -31,5 +31,7 @@ namespace BlueBadgeFinalProject.Data
         [ForeignKey( nameof(Hotels))]
         public int HotelId { get; set; }
         public virtual Hotel Hotels { get; set; }
+        public virtual List<Transaction> Transactions { get; set; } = new List<Transaction>();
+
     }
 }

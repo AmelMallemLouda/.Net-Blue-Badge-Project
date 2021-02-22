@@ -9,9 +9,10 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>BlueBadgeFinalProject.Models</RootNamespace>
     <AssemblyName>BlueBadgeFinalProject.Models</AssemblyName>
-    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -72,15 +73,11 @@
     <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
-<<<<<<< HEAD
-  <ItemGroup />
-=======
   <ItemGroup>
     <ProjectReference Include="..\BlueBadgeFinalProject.Data\BlueBadgeFinalProject.Data.csproj">
       <Project>{fd2aea57-1559-4bff-91cf-858afc0ca99c}</Project>
       <Name>BlueBadgeFinalProject.Data</Name>
     </ProjectReference>
   </ItemGroup>
->>>>>>> origin/Develop
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
