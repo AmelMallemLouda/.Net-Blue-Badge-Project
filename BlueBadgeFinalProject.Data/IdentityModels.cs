@@ -36,6 +36,10 @@ namespace BlueBadgeFinalProject.Data
         {
             return new ApplicationDbContext();
         }
+<<<<<<< HEAD
+        
+        public DbSet<VacationPackage> VacationPackage { get; set; }
+=======
 
 
         public DbSet<Transaction> Transactions { get; set; }
@@ -45,6 +49,7 @@ namespace BlueBadgeFinalProject.Data
         public DbSet<Customer>Customers { get; set; }
 
         
+>>>>>>> a9a99a9564e75059acc859f13af38623b73ce247
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             modelBuilder
