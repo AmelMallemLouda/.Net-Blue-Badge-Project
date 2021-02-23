@@ -69,7 +69,7 @@ namespace BlueBadgeFinalProject.Services
                         VacId = entity.VacId,
                         Flight = entity.Flight,
                         Food = entity.Food,
-                        Price = entity.Price.ToString(),
+                        Price = entity.Price,
                         Transportation = entity.Transportation,
                         VacationPackageName = entity.VacationPackageName
                     };
