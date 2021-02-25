@@ -88,6 +88,7 @@
     <Compile Include="Customer.cs" />
     <Compile Include="Hotel.cs" />
     <Compile Include="IdentityModels.cs" />
+    <Compile Include="VacationPackage.cs" />
     <Compile Include="Migrations\202102220402155_InitialCreate.cs" />
     <Compile Include="Migrations\202102220402155_InitialCreate.Designer.cs">
       <DependentUpon>202102220402155_InitialCreate.cs</DependentUpon>
