@@ -45,8 +45,6 @@ namespace BlueBadgeFinalProject.Data
         public DbSet<Hotel> Hotels { get; set; }
 
         public DbSet<Customer>Customers { get; set; }
-
-       
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             modelBuilder
