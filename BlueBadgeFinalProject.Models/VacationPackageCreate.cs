@@ -9,13 +9,19 @@ namespace BlueBadgeFinalProject.Models
 {
     public class VacationPackageCreate
     {
-        [Required]
+       // [Required]
         public string VacPacName { get; set; }
-
-        [Required]
-        [MinLength(1, ErrorMessage = "Please enter an amount over 0.00")]
+      
+       // [Required]
+      [MinLength(1, ErrorMessage = "Please enter an amount over 0.00")]
         public string Price { get; set; }
-        [Required]
+       // [Required]
         public string Transportation { get; set; }
+        // [Required]
+        
+        public string Flight { get; set; }
+        public string Food { get; set; }
+
+        public int HotelId { get; set; }
     }
 }

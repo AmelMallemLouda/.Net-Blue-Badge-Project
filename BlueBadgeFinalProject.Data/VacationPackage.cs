@@ -15,7 +15,7 @@ namespace BlueBadgeFinalProject.Data
 
         [Required]
         public Guid OwnerId { get; set; }
-        [Required]
+       [Required]
         public string VacationPackageName { get; set; }
         [Required]
         public string Flight { get; set; }
@@ -25,10 +25,10 @@ namespace BlueBadgeFinalProject.Data
         public string Transportation { get; set; }
         [Required]
         public string Price { get; set; }
-
-        /*[ForeignKey(nameof(Hotels))]
+        [Required]
+        [ForeignKey(nameof(Hotels))]
         public int HotelId { get; set; }
         public virtual Hotel Hotels { get; set; }
-        */
+        
     }
 }

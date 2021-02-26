@@ -23,7 +23,7 @@ namespace BlueBadgeFinalProject.Data
        public virtual List<Customer> Customers{ get; set; }
        //public virtual List<Review> Reviews {get; set;}=new List<Review>();
         public virtual List<Transaction> Transactions {get; set;}= new List<Transaction>();
-        //public virtual List<Vacationpackage>{get;set;}=new List <VacationPackage>();
+        public virtual List<VacationPackage>VacationPackages{get;set;}=new List <VacationPackage>();
 
     }
 }

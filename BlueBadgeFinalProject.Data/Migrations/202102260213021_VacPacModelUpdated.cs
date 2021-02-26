@@ -3,10 +3,74 @@
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class InitialMigration : DbMigration
+    public partial class VacPacModelUpdated : DbMigration
     {
         public override void Up()
         {
+            CreateTable(
+                "dbo.Customer",
+                c => new
+                    {
+                        CustomerId = c.Int(nullable: false, identity: true),
+                        OwnerId = c.Guid(nullable: false),
+                        FirstName = c.String(nullable: false),
+                        LastName = c.String(nullable: false),
+                        EmailAddress = c.String(nullable: false),
+                        PhoneNumber = c.String(nullable: false),
+                        HasMenmberShip = c.Boolean(nullable: false),
+                        HotelId = c.Int(nullable: false),
+                    })
+                .PrimaryKey(t => t.CustomerId)
+                .ForeignKey("dbo.Hotel", t => t.HotelId, cascadeDelete: true)
+                .Index(t => t.HotelId);
+            
+            CreateTable(
+                "dbo.Hotel",
+                c => new
+                    {
+                        HotelId = c.Int(nullable: false, identity: true),
+                        OwnerId = c.Guid(nullable: false),
+                        HotelName = c.String(nullable: false),
+                        Location = c.String(nullable: false),
+                        HasFreeParking = c.Boolean(nullable: false),
+                    })
+                .PrimaryKey(t => t.HotelId);
+            
+            CreateTable(
+                "dbo.Transaction",
+                c => new
+                    {
+                        TransactionId = c.Int(nullable: false, identity: true),
+                        DateOfTransaction = c.DateTime(nullable: false),
+                        ModifiedUtc = c.DateTimeOffset(precision: 7),
+                        Price = c.Double(nullable: false),
+                        OwnerId = c.Guid(nullable: false),
+                        CustomerId = c.Int(nullable: false),
+                        Hotel_HotelId = c.Int(),
+                    })
+                .PrimaryKey(t => t.TransactionId)
+                .ForeignKey("dbo.Customer", t => t.CustomerId, cascadeDelete: true)
+                .ForeignKey("dbo.Hotel", t => t.Hotel_HotelId)
+                .Index(t => t.CustomerId)
+                .Index(t => t.Hotel_HotelId);
+            
+            CreateTable(
+                "dbo.VacationPackage",
+                c => new
+                    {
+                        VacId = c.Int(nullable: false, identity: true),
+                        OwnerId = c.Guid(nullable: false),
+                        VacationPackageName = c.String(nullable: false),
+                        Flight = c.String(nullable: false),
+                        Food = c.String(nullable: false),
+                        Transportation = c.String(nullable: false),
+                        Price = c.String(nullable: false),
+                        HotelId = c.Int(nullable: false),
+                    })
+                .PrimaryKey(t => t.VacId)
+                .ForeignKey("dbo.Hotel", t => t.HotelId, cascadeDelete: true)
+                .Index(t => t.HotelId);
+            
             CreateTable(
                 "dbo.IdentityRole",
                 c => new
@@ -36,6 +100,9 @@
                 c => new
                     {
                         Id = c.String(nullable: false, maxLength: 128),
+                        FirstName = c.String(),
+                        LastName = c.String(),
+                        HasMembership = c.Boolean(nullable: false),
                         Email = c.String(),
                         EmailConfirmed = c.Boolean(nullable: false),
                         PasswordHash = c.String(),
@@ -77,20 +144,6 @@
                 .ForeignKey("dbo.ApplicationUser", t => t.ApplicationUser_Id)
                 .Index(t => t.ApplicationUser_Id);
             
-            CreateTable(
-                "dbo.VacationPackage",
-                c => new
-                    {
-                        VacId = c.Int(nullable: false, identity: true),
-                        OwnerId = c.Guid(nullable: false),
-                        VacationPackageName = c.String(),
-                        Flight = c.String(),
-                        Food = c.String(),
-                        Transportation = c.String(),
-                        Price = c.String(),
-                    })
-                .PrimaryKey(t => t.VacId);
-            
         }
         
         public override void Down()
@@ -99,16 +152,27 @@
             DropForeignKey("dbo.IdentityUserLogin", "ApplicationUser_Id", "dbo.ApplicationUser");
             DropForeignKey("dbo.IdentityUserClaim", "ApplicationUser_Id", "dbo.ApplicationUser");
             DropForeignKey("dbo.IdentityUserRole", "IdentityRole_Id", "dbo.IdentityRole");
+            DropForeignKey("dbo.Customer", "HotelId", "dbo.Hotel");
+            DropForeignKey("dbo.VacationPackage", "HotelId", "dbo.Hotel");
+            DropForeignKey("dbo.Transaction", "Hotel_HotelId", "dbo.Hotel");
+            DropForeignKey("dbo.Transaction", "CustomerId", "dbo.Customer");
             DropIndex("dbo.IdentityUserLogin", new[] { "ApplicationUser_Id" });
             DropIndex("dbo.IdentityUserClaim", new[] { "ApplicationUser_Id" });
             DropIndex("dbo.IdentityUserRole", new[] { "ApplicationUser_Id" });
             DropIndex("dbo.IdentityUserRole", new[] { "IdentityRole_Id" });
-            DropTable("dbo.VacationPackage");
+            DropIndex("dbo.VacationPackage", new[] { "HotelId" });
+            DropIndex("dbo.Transaction", new[] { "Hotel_HotelId" });
+            DropIndex("dbo.Transaction", new[] { "CustomerId" });
+            DropIndex("dbo.Customer", new[] { "HotelId" });
             DropTable("dbo.IdentityUserLogin");
             DropTable("dbo.IdentityUserClaim");
             DropTable("dbo.ApplicationUser");
             DropTable("dbo.IdentityUserRole");
             DropTable("dbo.IdentityRole");
+            DropTable("dbo.VacationPackage");
+            DropTable("dbo.Transaction");
+            DropTable("dbo.Hotel");
+            DropTable("dbo.Customer");
         }
     }
 }

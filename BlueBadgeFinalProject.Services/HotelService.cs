@@ -1,4 +1,5 @@
 ﻿using BlueBadgeFinalProject.Data;
+using BlueBadgeFinalProject.Models;
 using BlueBadgeFinalProject.Models.CustomerFolder;
 using BlueBadgeFinalProject.Models.HotelModels;
 using BlueBadgeFinalProject.Models.TransactionModels;
@@ -47,7 +48,7 @@ namespace BlueBadgeFinalProject.Services
                     {
                         HotelId = e.HotelId,
                         Name = e.HotelName,
-
+       
                         Customers = e.Customers.Select(
                             x => new CustomerList
                             {
@@ -60,7 +61,15 @@ namespace BlueBadgeFinalProject.Services
                               DateOfTransaction = z.DateOfTransaction,
   
                           }).ToList(),
-                            }).ToList()
+                            }).ToList(),
+
+                             VacationPackages = e.VacationPackages.Select(
+                            y => new VacationPackageListItem
+                            {
+                                VacId = y.VacId,
+                                Price = y.Price,
+                                VacPacName = y.VacationPackageName,
+                            }).ToList(),
 
                     }) ;
   
@@ -84,7 +93,7 @@ namespace BlueBadgeFinalProject.Services
                         HotelName = entity.HotelName,
                         Location=entity.Location,
                         HasFreeParking=entity.HasFreeParking,
-                        
+   
                         Customers = entity.Customers.Select(
                             x => new CustomerList
                             {
@@ -97,7 +106,15 @@ namespace BlueBadgeFinalProject.Services
                               DateOfTransaction = z.DateOfTransaction,
   
                           }).ToList(),
-                            }).ToList()
+                            }).ToList(),
+
+                        VacationPackages = entity.VacationPackages.Select(
+                            y => new VacationPackageListItem
+                            {
+                                VacId = y.VacId,
+                                Price = y.Price,
+                                VacPacName = y.VacationPackageName,
+                            }).ToList(),
 
                     };
 

@@ -15,6 +15,7 @@ namespace BlueBadgeFinalProject.Models.HotelModels
         public string Location { get; set; }
         public bool HasFreeParking { get; set; }
         public virtual List<CustomerList> Customers { get; set; } = new List<CustomerList>();
-       
+        public virtual List<VacationPackageListItem> VacationPackages { get; set; } = new List<VacationPackageListItem>();
+
     }
 }
