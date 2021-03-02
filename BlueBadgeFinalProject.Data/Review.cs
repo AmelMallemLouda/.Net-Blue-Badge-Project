@@ -17,7 +17,7 @@ namespace BlueBadgeFinalProject.Data
         public string Text { get; set; }
 
         [Required]
-        public string Rating { get; set; }
+        public string Rating { get; set; } //change to double
 
         [Required]
         public DateTimeOffset DateOfReview { get; set; }
