@@ -23,10 +23,10 @@ namespace BlueBadgeFinalProject_Console
             string errorMessage = "";
             try
             {
-                var client = new RestClient("https://localhost:44396/api/VacPac");
+                var restClient = new RestClient("https://localhost:44396/api/VacPac");
                 var request = new RestRequest(Method.GET);
                 request.AddHeader("Authorization", $"Bearer {AuthorizationKey}");
-                IRestResponse response = client.Execute(request);
+                IRestResponse response = restClient.Execute(request);
 
                 if (response.StatusCode != HttpStatusCode.OK)
                 {

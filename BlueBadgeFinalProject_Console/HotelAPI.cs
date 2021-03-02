@@ -21,24 +21,31 @@ namespace BlueBadgeFinalProject_Console
         {
             string responseContent = "";
             string errorMessage = "";
-            try
-            {
-                var client = new RestClient("https://localhost:44396/api/Hotel");
-                var request = new RestRequest(Method.GET);
-                request.AddHeader("Authorization", $"Bearer {AuthorizationKey}");
-                IRestResponse response = client.Execute(request);
 
+            //  Block of code to try
+            try
+            { 
+                var restClient = new RestClient("https://localhost:44396/api/Hotel");
+                
+                var request = new RestRequest(Method.GET);
+               
+                request.AddHeader("Authorization", $"Bearer {AuthorizationKey}");
+                IRestResponse response = restClient.Execute(request);
+                //if we don't get the 200 ok
                 if (response.StatusCode != HttpStatusCode.OK)
-                {
+                { 
+                    //Transport errors generated while attempting the request.
                     throw new Exception($"Error Occured: {response.ErrorMessage}");
                 }
-
+                
                 responseContent = response.Content;
 
             }
+
+            //  Block of code to handle errors
             catch (Exception ex)
             {
-                errorMessage = ex.Message;
+               errorMessage = ex.Message;
             }
             return (responseContent, errorMessage);
 
