@@ -13,6 +13,6 @@ namespace BlueBadgeFinalProject.Models
         public string Flight { get; set; }
         public string Food { get; set; }
         public string Transportation { get; set; }
-        public string Price { get; set; }
+        public double Price { get; set; }
     }
 }

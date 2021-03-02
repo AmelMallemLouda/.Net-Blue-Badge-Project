@@ -84,7 +84,6 @@
     <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
-  <ItemGroup />
   <ItemGroup>
     <ProjectReference Include="..\BlueBadgeFinalProject.Data\BlueBadgeFinalProject.Data.csproj">
       <Project>{fd2aea57-1559-4bff-91cf-858afc0ca99c}</Project>

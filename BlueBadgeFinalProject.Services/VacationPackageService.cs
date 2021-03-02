@@ -17,24 +17,27 @@ namespace BlueBadgeFinalProject.Services
             _userId = userId;
         }
 
-        public bool CreateVacPac(VacationPackageCreate model)
+        public bool CeateVacationPackage(VacationPackageCreate vacpac)
         {
-            var entity =
-                new VacationPackage()
-                {
-                    OwnerId = _userId,
-                    VacationPackageName = model.VacPacName,
-                    Transportation = model.Transportation,
-                    Price = model.Price
-                };
+            var entity = new VacationPackage()
+            {
+                OwnerId = _userId,
+                Price = vacpac.Price,
+                Transportation = vacpac.Transportation,
+                VacationPackageName = vacpac.VacPacName,
+                Flight=vacpac.Flight,
+                Food=vacpac.Food,
+               
+                HotelId = vacpac.HotelId,
 
+
+            };
             using (var ctx = new ApplicationDbContext())
             {
                 ctx.VacationPackage.Add(entity);
                 return ctx.SaveChanges() == 1;
             }
         }
-
         public IEnumerable<VacationPackageListItem> GetVacPacs()
         {
             using (var ctx = new ApplicationDbContext())
@@ -48,6 +51,7 @@ namespace BlueBadgeFinalProject.Services
                     {
                         VacId = e.VacId,
                         VacPacName = e.VacationPackageName,
+                        Price=e.Price,
                     }
                     );
 

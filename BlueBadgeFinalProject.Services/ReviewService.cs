@@ -25,6 +25,7 @@ namespace BlueBadgeFinalProject.Services
                     OwnerId = _userId,
                     Text = review.Text,
                     Rating = review.Rating,
+                    HotelId=review.HotelId,
                     DateOfReview = DateTimeOffset.Now
                 };
 
@@ -49,7 +50,7 @@ namespace BlueBadgeFinalProject.Services
                                 {
                                     ReviewId = e.ReviewId,
                                     Rating = e.Rating,
-                                    DateOfReview = e.DateOfReview
+                                    DateOfReview = e.DateOfReview,                           
                                 }
                         );
 
@@ -71,7 +72,8 @@ namespace BlueBadgeFinalProject.Services
                         ReviewId = entity.ReviewId,
                         Text = entity.Text,
                         Rating = entity.Rating,
-                        DateOfReview = entity.DateOfReview
+                        DateOfReview = entity.DateOfReview,
+                        HotelId=entity.HotelId
                     };
             }
         }
@@ -88,6 +90,7 @@ namespace BlueBadgeFinalProject.Services
                 entity.ReviewId = review.ReviewId;
                 entity.Text = review.Text;
                 entity.Rating = review.Rating;
+                entity.HotelId = review.HotelId;
 
                 return ctx.SaveChanges() == 1;
             }

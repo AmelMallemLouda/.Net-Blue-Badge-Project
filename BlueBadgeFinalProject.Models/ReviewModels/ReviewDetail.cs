@@ -10,7 +10,8 @@ namespace BlueBadgeFinalProject.Models.ReviewModels
     {
         public int ReviewId { get; set; }
         public string Text { get; set; }
-        public string Rating { get; set; }
+        public double Rating { get; set; }
         public DateTimeOffset DateOfReview { get; set; }
+        public int HotelId { get; set; }
     }
 }

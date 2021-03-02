@@ -17,7 +17,7 @@ namespace BlueBadgeFinalProject.Data
         public string Text { get; set; }
 
         [Required]
-        public string Rating { get; set; }
+        public double Rating { get; set; }
 
         [Required]
         public DateTimeOffset DateOfReview { get; set; }
@@ -25,8 +25,9 @@ namespace BlueBadgeFinalProject.Data
         [Required]
         public Guid OwnerId { get; set; }
 
-        /*[ForeignKey (nameof(Hotel))]
+        [Required]
+        [ForeignKey(nameof(Hotels))]
         public int HotelId { get; set; }
-        public virtual Hotel Hotel { get; set; }*/
+        public virtual Hotel Hotels { get; set; }
     }
 }

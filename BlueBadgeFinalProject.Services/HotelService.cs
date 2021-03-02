@@ -1,6 +1,8 @@
 ﻿using BlueBadgeFinalProject.Data;
+using BlueBadgeFinalProject.Models;
 using BlueBadgeFinalProject.Models.CustomerFolder;
 using BlueBadgeFinalProject.Models.HotelModels;
+using BlueBadgeFinalProject.Models.ReviewModels;
 using BlueBadgeFinalProject.Models.TransactionModels;
 using System;
 using System.Collections.Generic;
@@ -47,7 +49,6 @@ namespace BlueBadgeFinalProject.Services
                     {
                         HotelId = e.HotelId,
                         Name = e.HotelName,
-
                         Customers = e.Customers.Select(
                             x => new CustomerList
                             {
@@ -60,8 +61,25 @@ namespace BlueBadgeFinalProject.Services
                               DateOfTransaction = z.DateOfTransaction,
   
                           }).ToList(),
-                            }).ToList()
+                            }).ToList(),
 
+                             VacationPackages = e.VacationPackages.Select(
+                            y => new VacationPackageListItem
+                            {
+                                VacId = y.VacId,
+                                Price = y.Price,
+                                VacPacName = y.VacationPackageName,
+                            }).ToList(),
+
+                             Reviews=e.Reviews.Select(
+                                 w=> new ReviewListItem
+                                 {
+                                     Rating=w.Rating,
+                                     ReviewId=w.ReviewId,
+                                     DateOfReview=w.DateOfReview,
+                                    
+                                 }).ToList()
+   
                     }) ;
   
                 return query.ToArray();
@@ -72,9 +90,7 @@ namespace BlueBadgeFinalProject.Services
 
         public HotelDetails GetHotelByID(int Id)
         {
-            
-            
-
+    
                 using (var ctx = new ApplicationDbContext())
                 {
                     var entity = ctx.Hotels.Single(e => e.HotelId == Id && e.OwnerId == _UserId);
@@ -84,7 +100,7 @@ namespace BlueBadgeFinalProject.Services
                         HotelName = entity.HotelName,
                         Location=entity.Location,
                         HasFreeParking=entity.HasFreeParking,
-                        
+   
                         Customers = entity.Customers.Select(
                             x => new CustomerList
                             {
@@ -97,7 +113,25 @@ namespace BlueBadgeFinalProject.Services
                               DateOfTransaction = z.DateOfTransaction,
   
                           }).ToList(),
-                            }).ToList()
+                            }).ToList(),
+
+                        VacationPackages = entity.VacationPackages.Select(
+                            y => new VacationPackageListItem
+                            {
+                                VacId = y.VacId,
+                                Price = y.Price,
+                                VacPacName = y.VacationPackageName,
+                            }).ToList(),
+
+                        Reviews = entity.Reviews.Select(
+                                 w => new ReviewListItem
+                                 {
+                                     Rating = w.Rating,
+                                     ReviewId = w.ReviewId,
+                                     DateOfReview = w.DateOfReview,
+                                     
+                                 }).ToList()
+
 
                     };
 
