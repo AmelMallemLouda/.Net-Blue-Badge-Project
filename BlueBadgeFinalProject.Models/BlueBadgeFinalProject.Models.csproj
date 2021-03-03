@@ -62,13 +62,13 @@
     <Compile Include="CustomerModels\CustomerDetails.cs" />
     <Compile Include="CustomerModels\CustomerEdit.cs" />
     <Compile Include="CustomerModels\CustomerList.cs" />
+    <Compile Include="HotelCustomer\HotelCustomerCreate.cs" />
+    <Compile Include="HotelCustomer\HotelCustomerList.cs" />
     <Compile Include="HotelModels\HotelCreate.cs" />
     <Compile Include="HotelModels\HotelDetails.cs" />
     <Compile Include="HotelModels\HotelEdit.cs" />
     <Compile Include="HotelModels\HotelList.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Review\ReviewCreate.cs" />
-    <Compile Include="Review\ReviewListItem.cs" />
     <Compile Include="VacationEdit.cs" />
     <Compile Include="VacationPackageCreate.cs" />
     <Compile Include="VacationPackageDetail.cs" />
