@@ -36,9 +36,8 @@ namespace BlueBadgeFinalProject.Services
                 ctx.Hotels.Add(entity);
                 return ctx.SaveChanges() == 1;
             }
-
-
         }
+
         //Display all Hotels
         public IEnumerable<HotelList> GetHotels()
         {
@@ -71,26 +70,15 @@ namespace BlueBadgeFinalProject.Services
                                 VacPacName = y.VacationPackageName,
                             }).ToList(),
 
-                             //Reviews=e.Reviews.Select(
-                             //    w=> new ReviewListItem
-                             //    {
-                             //        Rating=w.Rating,
-                             //        ReviewId=w.ReviewId,
-                             //        DateOfReview=w.DateOfReview,
-                                    
-                             //    }).ToList()
-   
+                           
                     }) ;
   
                 return query.ToArray();
             }
-
         }
-
 
         public HotelDetails GetHotelByID(int Id)
         {
-    
                 using (var ctx = new ApplicationDbContext())
                 {
                     var entity = ctx.Hotels.Single(e => e.HotelId == Id && e.OwnerId == _UserId);
@@ -123,18 +111,8 @@ namespace BlueBadgeFinalProject.Services
                                 VacPacName = y.VacationPackageName,
                             }).ToList(),
 
-                        //Reviews = entity.Reviews.Select(
-                        //         w => new ReviewListItem
-                        //         {
-                        //             Rating = w.Rating,
-                        //             ReviewId = w.ReviewId,
-                        //             DateOfReview = w.DateOfReview,
-                                     
-                        //         }).ToList()
-
-
+                     
                     };
-
                 }
         }
 
@@ -161,9 +139,6 @@ namespace BlueBadgeFinalProject.Services
 
                 return ctx.SaveChanges() == 1;
             }
-
-
         }
-
     }
 }

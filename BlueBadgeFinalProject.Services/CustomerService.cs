@@ -29,10 +29,9 @@ namespace BlueBadgeFinalProject.Services
                 PhoneNumber = customer.PhoneNumber,
                 EmailAddress = customer.EmailAddress,
                 HasMenmberShip = customer.HasMemberShip,
-                HotelId=customer.HotelId,
-                
-                
+                HotelId=customer.HotelId,  
             };
+
             using (var ctx=new ApplicationDbContext())
             {
                 ctx.Customers.Add(entity);
@@ -57,12 +56,9 @@ namespace BlueBadgeFinalProject.Services
                               DateOfTransaction = z.DateOfTransaction,
         
                           }).ToList(),
-
-
                     });
+
                 return entity.ToArray();
-                    
-                
             }
         }
 
@@ -86,7 +82,6 @@ namespace BlueBadgeFinalProject.Services
                               DateOfTransaction = z.DateOfTransaction,
     
                           }).ToList(),
-
                 };
             }
         }

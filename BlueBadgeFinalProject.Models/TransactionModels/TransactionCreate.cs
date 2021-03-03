@@ -9,8 +9,6 @@ namespace BlueBadgeFinalProject.Models.TransactionModels
 {
     public class TransactionCreate
     {
-       
-
         public double Price { get; set; }
         public DateTime DateOfTransaction { get; set; }
         public int CustomerId { get; set; }

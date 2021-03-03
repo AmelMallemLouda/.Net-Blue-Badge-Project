@@ -12,6 +12,5 @@ namespace BlueBadgeFinalProject.Models.HotelModels
         public string Name { get; set; }
         public string Location { get; set; }
         public bool HasFreeParking { get; set; }
-       
     }
 }

@@ -58,10 +58,6 @@ namespace BlueBadgeFinalProject.WebAPI.Controllers
                 return InternalServerError();
 
             return Ok("The customer has been deleted.");
-
-
         }
-
-
     }
 }
