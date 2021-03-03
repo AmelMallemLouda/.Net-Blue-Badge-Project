@@ -4,14 +4,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace VacDestinationConsoleApp
+namespace BlueBadgeFinalProject_Console
 {
     class Program
     {
         static void Main(string[] args)
         {
-            ConsumeHotelSync objsync = new ConsumeHotelSync();
-            objsync.GetAllHotelsData();
+            ProgramUI program = new ProgramUI();
+            program.Run();
         }
     }
 }
