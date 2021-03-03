@@ -13,5 +13,14 @@ namespace BlueBadgeFinalProject.Models.Review
         public int HotelId { get; set; }
         [Required]
         public int CustomerId { get; set; }
+       
+        [Required]
+        public string Text { get; set; }
+
+        [Required]
+        public double Rating { get; set; }
+
+        [Required]
+        public DateTimeOffset DateOfReview { get; set; }
     }
 }

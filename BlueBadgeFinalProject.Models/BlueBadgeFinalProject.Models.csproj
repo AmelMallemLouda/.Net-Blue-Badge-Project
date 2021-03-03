@@ -68,6 +68,7 @@
     <Compile Include="HotelModels\HotelList.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Review\ReviewCreate.cs" />
+    <Compile Include="Review\ReviewListItem.cs" />
     <Compile Include="VacationEdit.cs" />
     <Compile Include="VacationPackageCreate.cs" />
     <Compile Include="VacationPackageDetail.cs" />
