@@ -10,8 +10,6 @@ namespace BlueBadgeFinalProject.Services
 {
     public class ReviewService
     {
-       
-        
             private readonly Guid _userId;
             public ReviewService(Guid userId)
             {

@@ -14,12 +14,25 @@ namespace BlueBadgeFinalProject.Data
         [ForeignKey(nameof(Customers))]
         public int CustomerId { get; set; }
         public virtual Customer Customers { get; set; }
-
-       
-
-        [Key, Column(Order =1)]
+ 
+        [Key, Column(Order = 1)]
         [ForeignKey(nameof(Hotels))]
         public int HotelId { get; set; }
         public virtual Hotel Hotels { get; set; }
+
+        [Key]
+        public int ReviewId { get; set; }
+
+        [Required]
+        public string Text { get; set; }
+
+        [Required]
+        public double Rating { get; set; } 
+
+        [Required]
+        public DateTimeOffset DateOfReview { get; set; }
+
+        [Required]
+        public Guid OwnerId { get; set; }
     }
 }

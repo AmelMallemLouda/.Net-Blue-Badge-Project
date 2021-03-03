@@ -18,11 +18,11 @@ namespace BlueBadgeFinalProject.Data
        [Required]
         public string VacationPackageName { get; set; }
         [Required]
-        public string Flight { get; set; }
+        public string Flight { get; set; } 
         [Required]
-        public string Food { get; set; }
+        public string Food { get; set; } 
         [Required]
-        public string Transportation { get; set; }
+        public string Transportation { get; set; } 
         [Required]
         public double Price { get; set; }
         [Required]
