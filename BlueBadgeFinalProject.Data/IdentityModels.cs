@@ -39,7 +39,6 @@ namespace BlueBadgeFinalProject.Data
         
         public DbSet<VacationPackage> VacationPackage { get; set; }
 
-
         public DbSet<Transaction> Transactions { get; set; }
    
         public DbSet<Hotel> Hotels { get; set; }

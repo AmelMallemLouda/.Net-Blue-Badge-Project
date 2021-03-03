@@ -18,6 +18,5 @@ namespace BlueBadgeFinalProject.Models.HotelModels
         public virtual List<CustomerList> Customers { get; set; } = new List<CustomerList>();
         public virtual List<VacationPackageListItem> VacationPackages { get; set; } = new List<VacationPackageListItem>();
         public List<ReviewListItem> Reviews { get; set; } = new List<ReviewListItem>();
-
     }
 }

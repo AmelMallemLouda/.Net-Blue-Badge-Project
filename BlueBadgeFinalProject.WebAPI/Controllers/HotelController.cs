@@ -65,9 +65,5 @@ namespace BlueBadgeFinalProject.WebAPI.Controllers
                 return InternalServerError();
             return Ok("The hotel has been deleted.");
         }
-
     }
-    
-
-
 }
