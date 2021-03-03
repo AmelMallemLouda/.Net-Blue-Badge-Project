@@ -1,4 +1,6 @@
 ﻿using BlueBadgeFinalProject.Data;
+using BlueBadgeFinalProject.Models.CustomerFolder;
+using BlueBadgeFinalProject.Models.HotelModels;
 using BlueBadgeFinalProject.Models.Review;
 using System;
 using System.Collections.Generic;
@@ -21,12 +23,42 @@ namespace BlueBadgeFinalProject.Services
             var entity = new Review()
             {
                 HotelId = model.HotelId,
-                CustomerId = model.CustomerId
+                CustomerId = model.CustomerId,
+                Text=model.Text,
+                Rating=model.Rating,
+                DateOfReview=model.DateOfReview
             };
             using (var ctx = new ApplicationDbContext())
             {
                 ctx.Reviews.Add(entity);
                 return ctx.SaveChanges() == 1;
+            }
+        }
+
+        public IEnumerable<ReviewListItem> GetAllReviews()
+        {
+            using(var ctx=new ApplicationDbContext())
+            {
+                var query = ctx.Reviews.Select(e => new ReviewListItem
+                {
+                    Id = e.ReviewId,
+                    CustomerId = e.CustomerId,
+                    Customers = new CustomerList
+                    {
+                        CustomerId = e.Customers.CustomerId,
+                        FullName = e.Customers.FirstName + " " + e.Customers.LastName
+
+                    },
+
+                    HotelId=e.HotelId,
+                    Hotels=new HotelList
+                    {
+                        HotelId=e.Hotels.HotelId,
+                        Name=e.Hotels.HotelName,
+
+                    }
+                });
+                return query.ToArray();
             }
         }
 

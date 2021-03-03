@@ -2,13 +2,13 @@
 using BlueBadgeFinalProject.Models;
 using BlueBadgeFinalProject.Models.CustomerFolder;
 using BlueBadgeFinalProject.Models.HotelModels;
-using BlueBadgeFinalProject.Models.ReviewModels;
 using BlueBadgeFinalProject.Models.TransactionModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+
 
 namespace BlueBadgeFinalProject.Services
 {
@@ -71,14 +71,14 @@ namespace BlueBadgeFinalProject.Services
                                 VacPacName = y.VacationPackageName,
                             }).ToList(),
 
-                             Reviews=e.Reviews.Select(
-                                 w=> new ReviewListItem
-                                 {
-                                     Rating=w.Rating,
-                                     ReviewId=w.ReviewId,
-                                     DateOfReview=w.DateOfReview,
+                             //Reviews=e.Reviews.Select(
+                             //    w=> new ReviewListItem
+                             //    {
+                             //        Rating=w.Rating,
+                             //        ReviewId=w.ReviewId,
+                             //        DateOfReview=w.DateOfReview,
                                     
-                                 }).ToList()
+                             //    }).ToList()
    
                     }) ;
   
@@ -123,14 +123,14 @@ namespace BlueBadgeFinalProject.Services
                                 VacPacName = y.VacationPackageName,
                             }).ToList(),
 
-                        Reviews = entity.Reviews.Select(
-                                 w => new ReviewListItem
-                                 {
-                                     Rating = w.Rating,
-                                     ReviewId = w.ReviewId,
-                                     DateOfReview = w.DateOfReview,
+                        //Reviews = entity.Reviews.Select(
+                        //         w => new ReviewListItem
+                        //         {
+                        //             Rating = w.Rating,
+                        //             ReviewId = w.ReviewId,
+                        //             DateOfReview = w.DateOfReview,
                                      
-                                 }).ToList()
+                        //         }).ToList()
 
 
                     };
