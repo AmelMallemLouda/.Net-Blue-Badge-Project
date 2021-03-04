@@ -17,18 +17,17 @@ namespace BlueBadgeFinalProject.Data
         public Guid OwnerId { get; set; }
         [Required]
         public string VacationPackageName { get; set; }
+        public bool Flight { get; set; }
+        public bool Food { get; set; }
         [Required]
-        public string Flight { get; set; }
-        [Required]
-        public string Food { get; set; }
-        [Required]
-        public string Transportation { get; set; }
+        public bool Transportation { get; set; }
         [Required]
         public string Price { get; set; }
 
-        /*[ForeignKey(nameof(Hotels))]
+        [Required]
+        [ForeignKey(nameof(Hotels))]
         public int HotelId { get; set; }
         public virtual Hotel Hotels { get; set; }
-        */
+
     }
 }

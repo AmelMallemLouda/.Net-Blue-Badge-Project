@@ -16,6 +16,8 @@ namespace BlueBadgeFinalProject.Models
         [MinLength(1, ErrorMessage = "Please enter an amount over 0.00")]
         public string Price { get; set; }
         [Required]
-        public string Transportation { get; set; }
+        public bool Transportation { get; set; }
+        [Required]
+        public int HotelId { get; set; }
     }
 }
