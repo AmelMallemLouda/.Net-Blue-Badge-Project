@@ -3,6 +3,7 @@ using BlueBadgeFinalProject.Models;
 using BlueBadgeFinalProject.Models.CustomerFolder;
 using BlueBadgeFinalProject.Models.HotelCustomer;
 using BlueBadgeFinalProject.Models.HotelModels;
+using BlueBadgeFinalProject.Models.ReviewModles;
 using BlueBadgeFinalProject.Models.TransactionModels;
 using System;
 using System.Collections.Generic;
@@ -26,7 +27,8 @@ namespace BlueBadgeFinalProject.Services
             var entity = new HotelCustomer()
             {
                 HotelId = model.HotelId,
-                CustomerId = model.CustomerId
+                CustomerId = model.CustomerId,
+                ReviewId=model.ReviewId
             };
             using (var ctx = new ApplicationDbContext())
             {
@@ -69,8 +71,16 @@ namespace BlueBadgeFinalProject.Services
                               Price = z.Price,
                               VacPacName=z.VacationPackageName
 
-                          }).ToList(),
+                          }).ToList()         
+                    },
+                    ReviewId=e.ReviewId,
+                    Review= new ReviewListItem()
+                    {
+                        ReviewId=e.ReviewId,
+                        Rating=e.Review.Rating,
+                        DateOfReview=e.Review.DateOfReview
                     }
+
                 });
                 return query.ToArray();
             }

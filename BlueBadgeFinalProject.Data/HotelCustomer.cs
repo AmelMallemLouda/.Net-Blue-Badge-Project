@@ -17,5 +17,8 @@ namespace BlueBadgeFinalProject.Data
 
         public int CustomerId { get; set; }
         public virtual Customer Customer { get; set; }
+
+        public int ReviewId { get; set; }
+        public virtual Review Review { get; set; }
     }
 }

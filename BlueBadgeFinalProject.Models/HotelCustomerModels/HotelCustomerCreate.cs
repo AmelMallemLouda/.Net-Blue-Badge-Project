@@ -13,5 +13,7 @@ namespace BlueBadgeFinalProject.Models.HotelCustomer
         public int CustomerId { get; set; }
         [Required]
         public int HotelId { get; set; }
+        [Required]
+        public int ReviewId { get; set; }
     }
 }
