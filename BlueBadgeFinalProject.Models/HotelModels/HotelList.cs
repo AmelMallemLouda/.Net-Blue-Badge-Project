@@ -1,11 +1,6 @@
-﻿using BlueBadgeFinalProject.Data;
-using BlueBadgeFinalProject.Models.CustomerFolder;
-using BlueBadgeFinalProject.Models.TransactionModels;
-using System;
+﻿using BlueBadgeFinalProject.Models.CustomerFolder;
+using BlueBadgeFinalProject.Models.Review;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 
 namespace BlueBadgeFinalProject.Models.HotelModels
@@ -15,6 +10,7 @@ namespace BlueBadgeFinalProject.Models.HotelModels
         public int HotelId { get; set; }
         public string Name { get; set; }
         public List<CustomerList> Customers { get; set; } = new List<CustomerList>();
-
+        public List<VacationPackageListItem> VacationPackages { get; set; } = new List<VacationPackageListItem>();
+        public List<ReviewListItem> Reviews{ get; set; } = new List<ReviewListItem>();
     }
 }

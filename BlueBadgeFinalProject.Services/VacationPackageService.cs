@@ -17,25 +17,27 @@ namespace BlueBadgeFinalProject.Services
             _userId = userId;
         }
 
-        public bool CreateVacPac(VacationPackageCreate model)
+        public bool CeateVacationPackage(VacationPackageCreate vacpac)
         {
-            var entity =
-                new VacationPackage()
-                {
-                    OwnerId = _userId,
-                    VacationPackageName = model.VacPacName,
-                    Transportation = model.Transportation,
-                    Price = model.Price,
-                    HotelId = model.HotelId
-                };
+            var entity = new VacationPackage()
+            {
+                OwnerId = _userId,
+                Price = vacpac.Price.ToString(),
+                Transportation = vacpac.Transportation,
+                VacationPackageName = vacpac.VacPacName,
+                Flight=vacpac.Flight,
+                Food=vacpac.Food,
+               
+                HotelId = vacpac.HotelId,
 
+
+            };
             using (var ctx = new ApplicationDbContext())
             {
                 ctx.VacationPackage.Add(entity);
                 return ctx.SaveChanges() == 1;
             }
         }
-
         public IEnumerable<VacationPackageListItem> GetVacPacs()
         {
             using (var ctx = new ApplicationDbContext())
@@ -49,6 +51,7 @@ namespace BlueBadgeFinalProject.Services
                     {
                         VacId = e.VacId,
                         VacPacName = e.VacationPackageName,
+                        Price= Double.Parse(e.Price),
                     }
                     );
 
@@ -70,7 +73,7 @@ namespace BlueBadgeFinalProject.Services
                         VacId = entity.VacId,
                         Flight = entity.Flight,
                         Food = entity.Food,
-                        Price = entity.Price,
+                        Price = double.Parse(entity.Price),
                         Transportation = entity.Transportation,
                         VacationPackageName = entity.VacationPackageName,
                         HotelId = entity.HotelId
