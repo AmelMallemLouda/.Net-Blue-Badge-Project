@@ -13,18 +13,18 @@ using System.Threading.Tasks;
 
 namespace BlueBadgeFinalProject.Services
 {
-    public class HotelCustomerService
+    public class JunctionService
     {
 
         private readonly Guid _userId;
-        public  HotelCustomerService(Guid userId)
+        public  JunctionService(Guid userId)
         {
             _userId = userId;
         }
 
-        public bool CreateHotelCustomer(HotelCustomerCreate model)
+        public bool CreateHotelCustomer(JunctionCreate model)
         {
-            var entity = new HotelCustomer()
+            var entity = new Junction()
             {
                 HotelId = model.HotelId,
                 CustomerId = model.CustomerId,
@@ -37,11 +37,11 @@ namespace BlueBadgeFinalProject.Services
             }
         }
 
-        public IEnumerable<HotelCustomerList> GetAllHotelCustomers()
+        public IEnumerable<JunctionList> GetAllHotelCustomers()
         {
             using (var ctx= new ApplicationDbContext())
             {
-                var query = ctx.HotelCustomers.Select(e => new HotelCustomerList
+                var query = ctx.HotelCustomers.Select(e => new JunctionList
                 {
                     Id = e.Id,
                     CustomerId = e.CustomerId,

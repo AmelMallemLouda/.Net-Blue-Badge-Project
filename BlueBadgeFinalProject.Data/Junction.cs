@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace BlueBadgeFinalProject.Data
 {
-    public class HotelCustomer
+    public class Junction
     {
         [Key]
         public int Id { get; set; }

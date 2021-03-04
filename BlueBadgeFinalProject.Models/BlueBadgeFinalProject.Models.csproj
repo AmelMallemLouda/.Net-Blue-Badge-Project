@@ -62,8 +62,8 @@
     <Compile Include="CustomerModels\CustomerDetails.cs" />
     <Compile Include="CustomerModels\CustomerEdit.cs" />
     <Compile Include="CustomerModels\CustomerList.cs" />
-    <Compile Include="HotelCustomerModels\HotelCustomerCreate.cs" />
-    <Compile Include="HotelCustomerModels\HotelCustomerList.cs" />
+    <Compile Include="JunctionModels\JunctionCreate.cs" />
+    <Compile Include="JunctionModels\JunctionList.cs" />
     <Compile Include="HotelModels\HotelCreate.cs" />
     <Compile Include="HotelModels\HotelDetails.cs" />
     <Compile Include="HotelModels\HotelEdit.cs" />

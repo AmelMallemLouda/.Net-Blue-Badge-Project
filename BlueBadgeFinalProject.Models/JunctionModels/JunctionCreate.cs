@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace BlueBadgeFinalProject.Models.HotelCustomer
 {
-    public class HotelCustomerCreate
+    public class JunctionCreate
     {
         [Required]
         public int CustomerId { get; set; }

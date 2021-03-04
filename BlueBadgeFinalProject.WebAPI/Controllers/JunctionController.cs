@@ -10,21 +10,21 @@ using System.Web.Http;
 
 namespace BlueBadgeFinalProject.WebAPI.Controllers
 {
-    public class HotelCustomerController : ApiController
+    public class JunctionController : ApiController
     {
-        private HotelCustomerService CreateHotelCustomerService()
+        private JunctionService CreateHotelCustomerService()
         {
             var userId = Guid.Parse(User.Identity.GetUserId());
-            var HotelCustomerService = new HotelCustomerService(userId);
+            var HotelCustomerService = new JunctionService(userId);
             return HotelCustomerService;
         }
         public IHttpActionResult Get()
         {
-            HotelCustomerService hotelCustomerService = CreateHotelCustomerService();
+            JunctionService hotelCustomerService = CreateHotelCustomerService();
             var hotelCustomers = hotelCustomerService.GetAllHotelCustomers();
             return Ok(hotelCustomers);
         }
-        public IHttpActionResult Post(HotelCustomerCreate hotelCustomer)
+        public IHttpActionResult Post(JunctionCreate hotelCustomer)
         {
             if (!ModelState.IsValid)
                 return BadRequest(ModelState);

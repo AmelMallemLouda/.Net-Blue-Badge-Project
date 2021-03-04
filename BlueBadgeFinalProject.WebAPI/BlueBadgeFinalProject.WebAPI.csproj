@@ -224,7 +224,7 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\CustomerController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
-    <Compile Include="Controllers\HotelCustomerController.cs" />
+    <Compile Include="Controllers\JunctionController.cs" />
     <Compile Include="Controllers\ReviewController.cs" />
     <Compile Include="Controllers\VacPacController.cs" />
     <Compile Include="Controllers\HotelController.cs" />
