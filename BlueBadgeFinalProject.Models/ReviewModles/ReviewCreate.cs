@@ -5,22 +5,15 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BlueBadgeFinalProject.Models.Review
+namespace BlueBadgeFinalProject.Models.ReviewModles
 {
     public class ReviewCreate
     {
         [Required]
-        public int HotelId { get; set; }
-        [Required]
-        public int CustomerId { get; set; }
-       
-        [Required]
+        [MinLength(2, ErrorMessage = "Please enter at least 2 characters.")]
+        [MaxLength(10000, ErrorMessage = "There are too many characters in this field.")]
         public string Text { get; set; }
-
-        [Required]
         public double Rating { get; set; }
-
-        [Required]
-        public DateTimeOffset DateOfReview { get; set; }
+      
     }
 }

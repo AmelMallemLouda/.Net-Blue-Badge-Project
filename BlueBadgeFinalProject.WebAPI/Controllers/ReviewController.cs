@@ -1,4 +1,4 @@
-﻿using BlueBadgeFinalProject.Models.Review;
+﻿using BlueBadgeFinalProject.Models.ReviewModles;
 using BlueBadgeFinalProject.Services;
 using Microsoft.AspNet.Identity;
 using System;
@@ -13,39 +13,63 @@ namespace BlueBadgeFinalProject.WebAPI.Controllers
     [Authorize]
     public class ReviewController : ApiController
     {
-        [HttpPost]
-        public IHttpActionResult PostReview(ReviewCreate model)
+        private ReviewService CreateReviewService()
         {
-            var reviewService = CreateReviewService();
-            if (!reviewService.CreateReview(model))
-                return InternalServerError();
-
-            return Ok();
+            var userId = Guid.Parse(User.Identity.GetUserId());
+            var reviewService = new ReviewService(userId);
+            return reviewService;
         }
 
-        [HttpGet]
-        public IHttpActionResult GetAllReviews()
+        public IHttpActionResult Post(ReviewCreate review)
         {
-            var reviewService = CreateReviewService();
-            var reviews = reviewService.GetAllReviews();
+            if (!ModelState.IsValid)
+                return BadRequest(ModelState);
+
+            var service = CreateReviewService();
+
+            if (!service.CreateReview(review))
+                return InternalServerError();
+
+            return Ok("Your review has been successfully created!");
+        }
+
+        public IHttpActionResult Get()
+        {
+            ReviewService reviewService = CreateReviewService();
+            var reviews = reviewService.GetReviews();
             return Ok(reviews);
         }
 
-        [HttpDelete]
-        public IHttpActionResult DeleteReview([FromUri] int hotelId, [FromUri] int reviewId) 
+        [Route("api/Review/{reviewId}")]
+        public IHttpActionResult Get(int reviewId)
         {
-            var service = CreateReviewService();
-            if (service.DeleteReview(hotelId,reviewId))
-                return Ok();
-
-            return InternalServerError();
+            ReviewService reviewService = CreateReviewService();
+            var review = reviewService.GetReviewById(reviewId);
+            return Ok(review);
         }
 
-        private ReviewService CreateReviewService()
+        public IHttpActionResult Put(ReviewEdit review)
         {
-            Guid userId = Guid.Parse(User.Identity.GetUserId());
-            var service = new ReviewService(userId);
-            return service;
+            if (!ModelState.IsValid)
+                return BadRequest(ModelState);
+
+            var service = CreateReviewService();
+
+            if (!service.UpdateReview(review))
+                return InternalServerError();
+
+            return Ok("Your review has been successfully updated!");
+        }
+
+        [Route("api/Review/{reviewId}")]
+        public IHttpActionResult Delete(int reviewId)
+        {
+            var service = CreateReviewService();
+
+            if (!service.DeleteReview(reviewId))
+                return InternalServerError();
+
+            return Ok("Your review has been deleted!");
         }
     }
 }

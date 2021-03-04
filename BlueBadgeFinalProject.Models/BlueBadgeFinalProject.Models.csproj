@@ -62,13 +62,17 @@
     <Compile Include="CustomerModels\CustomerDetails.cs" />
     <Compile Include="CustomerModels\CustomerEdit.cs" />
     <Compile Include="CustomerModels\CustomerList.cs" />
+    <Compile Include="JunctionModels\JunctionCreate.cs" />
+    <Compile Include="JunctionModels\JunctionList.cs" />
     <Compile Include="HotelModels\HotelCreate.cs" />
     <Compile Include="HotelModels\HotelDetails.cs" />
     <Compile Include="HotelModels\HotelEdit.cs" />
     <Compile Include="HotelModels\HotelList.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Review\ReviewCreate.cs" />
-    <Compile Include="Review\ReviewListItem.cs" />
+    <Compile Include="ReviewModles\ReviewCreate.cs" />
+    <Compile Include="ReviewModles\ReviewDetails.cs" />
+    <Compile Include="ReviewModles\ReviewEdit.cs" />
+    <Compile Include="ReviewModles\ReviewListItem.cs" />
     <Compile Include="VacationEdit.cs" />
     <Compile Include="VacationPackageCreate.cs" />
     <Compile Include="VacationPackageDetail.cs" />
@@ -88,6 +92,7 @@
       <Name>BlueBadgeFinalProject.Data</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>

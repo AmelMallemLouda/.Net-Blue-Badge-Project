@@ -27,8 +27,5 @@ namespace BlueBadgeFinalProject.Data
         [ForeignKey(nameof(Customer))]
         public int CustomerId { get; set; }
         public virtual Customer Customer { get; set; }
-
-
-
     }
 }

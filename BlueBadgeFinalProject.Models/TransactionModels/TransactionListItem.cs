@@ -10,8 +10,6 @@ namespace BlueBadgeFinalProject.Models.TransactionModels
     public class TransactionListItem
     {
         public int TransactionId { get; set; }
-
         public DateTime DateOfTransaction { get; set; }
-
     }
 }

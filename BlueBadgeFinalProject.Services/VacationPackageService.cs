@@ -27,10 +27,7 @@ namespace BlueBadgeFinalProject.Services
                 VacationPackageName = vacpac.VacPacName,
                 Flight=vacpac.Flight,
                 Food=vacpac.Food,
-               
                 HotelId = vacpac.HotelId,
-
-
             };
             using (var ctx = new ApplicationDbContext())
             {

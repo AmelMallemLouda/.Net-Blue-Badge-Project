@@ -28,8 +28,6 @@ namespace BlueBadgeFinalProject.Services
                     Price = model.Price,
                     DateOfTransaction = DateTime.Now,
                     CustomerId=model.CustomerId
-                    
-                   
                 };
 
             using (var ctx = new ApplicationDbContext())
@@ -54,8 +52,7 @@ namespace BlueBadgeFinalProject.Services
                                     TransactionId = e.TransactionId,
                                     DateOfTransaction = e.DateOfTransaction,
  
-                                });
-                        
+                                });     
 
                 return query.ToArray(); 
             }

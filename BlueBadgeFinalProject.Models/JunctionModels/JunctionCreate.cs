@@ -5,12 +5,15 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BlueBadgeFinalProject.Models.TransactionModels
+namespace BlueBadgeFinalProject.Models.HotelCustomer
 {
-    public class TransactionCreate
+    public class JunctionCreate
     {
-        public double Price { get; set; }
-        public DateTime DateOfTransaction { get; set; }
+        [Required]
         public int CustomerId { get; set; }
+        [Required]
+        public int HotelId { get; set; }
+        [Required]
+        public int ReviewId { get; set; }
     }
 }

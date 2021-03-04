@@ -12,8 +12,7 @@ namespace BlueBadgeFinalProject.Models.CustomerFolder
         public int CustomerId { get; set; }
         public  string FullName { get; set; }
          public virtual List<TransactionListItem> Transactions { get; set; } = new List<TransactionListItem>();
-       
-        
+        //public virtual TransactionListItem Transaction { get; set; } = new TransactionListItem();
 
     }
 }
