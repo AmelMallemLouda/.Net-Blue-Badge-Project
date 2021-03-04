@@ -45,7 +45,11 @@ namespace BlueBadgeFinalProject.Data
 
         public DbSet<Customer>Customers { get; set; }
 
+        public DbSet<Junction> HotelCustomers { get; set; }
+
         public DbSet<Review> Reviews { get; set; }
+
+      
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {

@@ -13,6 +13,7 @@ namespace BlueBadgeFinalProject.Models.TransactionModels
         public int TransactionId { get; set; }
        
         public double Price { get; set; }
+
         [Display(Name = "Created")]
         public DateTimeOffset DateOfTransaction { get; set; }
 
@@ -20,8 +21,5 @@ namespace BlueBadgeFinalProject.Models.TransactionModels
         public DateTimeOffset? ModifiedUtc { get; set; }
         
         public int CustomerId { get; set; }
-
-
-
     }
 }

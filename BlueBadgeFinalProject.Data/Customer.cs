@@ -24,13 +24,6 @@ namespace BlueBadgeFinalProject.Data
         [Required]
         [DataType(DataType.PhoneNumber)]
         public string PhoneNumber { get; set; }
-        [Required]
-        public bool HasMenmberShip { get; set; }
-
-        [Required]
-        [ForeignKey( nameof(Hotels))]
-        public int HotelId { get; set; }
-        public virtual Hotel Hotels { get; set; }
         public virtual List<Transaction> Transactions { get; set; } = new List<Transaction>();
 
     }

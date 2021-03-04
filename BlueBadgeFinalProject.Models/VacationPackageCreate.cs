@@ -21,7 +21,6 @@ namespace BlueBadgeFinalProject.Models
         
         public string Flight { get; set; }
         public string Food { get; set; }
-
         public int HotelId { get; set; }
     }
 }

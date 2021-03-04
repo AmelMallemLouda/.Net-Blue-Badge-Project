@@ -1,7 +1,5 @@
 ﻿using BlueBadgeFinalProject.Data;
-using BlueBadgeFinalProject.Models.CustomerFolder;
-using BlueBadgeFinalProject.Models.HotelModels;
-using BlueBadgeFinalProject.Models.Review;
+using BlueBadgeFinalProject.Models.ReviewModles;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,22 +10,24 @@ namespace BlueBadgeFinalProject.Services
 {
     public class ReviewService
     {
-            private readonly Guid _userId;
-            public ReviewService(Guid userId)
-            {
-                _userId = userId;
-            }
+        private readonly Guid _userId;
 
-        public bool CreateReview(ReviewCreate model)
+        public ReviewService(Guid userId)
         {
-            var entity = new Review()
-            {
-                HotelId = model.HotelId,
-                CustomerId = model.CustomerId,
-                Text=model.Text,
-                Rating=model.Rating,
-                DateOfReview=model.DateOfReview
-            };
+            _userId = userId;
+        }
+
+        public bool CreateReview(ReviewCreate review)
+        {
+            var entity =
+                new Review()
+                {
+                    OwnerId = _userId,
+                    Text = review.Text,
+                    Rating = review.Rating,
+                    DateOfReview = DateTimeOffset.Now
+                };
+
             using (var ctx = new ApplicationDbContext())
             {
                 ctx.Reviews.Add(entity);
@@ -35,46 +35,77 @@ namespace BlueBadgeFinalProject.Services
             }
         }
 
-        public IEnumerable<ReviewListItem> GetAllReviews()
+        public IEnumerable<ReviewListItem> GetReviews()
         {
-            using(var ctx=new ApplicationDbContext())
+            using (var ctx = new ApplicationDbContext())
             {
-                var query = ctx.Reviews.Select(e => new ReviewListItem
-                {
-                    Id = e.ReviewId,
-                    CustomerId = e.CustomerId,
-                    Customers = new CustomerList
-                    {
-                        CustomerId = e.Customers.CustomerId,
-                        FullName = e.Customers.FirstName + " " + e.Customers.LastName
+                var query =
+                    ctx
+                        .Reviews
+                        .Where(e => e.OwnerId == _userId)
+                        .Select(
+                            e =>
+                                new ReviewListItem
+                                {
+                                    ReviewId = e.ReviewId,
+                                    Rating = e.Rating,
+                                    DateOfReview = e.DateOfReview,
+                                }
+                        );
 
-                    },
-
-                    HotelId=e.HotelId,
-                    Hotels=new HotelList
-                    {
-                        HotelId=e.Hotels.HotelId,
-                        Name=e.Hotels.HotelName,
-
-                    }
-                });
                 return query.ToArray();
             }
         }
 
-        public bool DeleteReview(int customerId, int hotelId)
+        public ReviewDetails GetReviewById(int reviewId)
         {
-            using(var ctx=new ApplicationDbContext())
+            using (var ctx = new ApplicationDbContext())
             {
-                var entity = ctx.Reviews.SingleOrDefault(e => e.CustomerId == customerId && e.HotelId == hotelId);
-                if(entity != null)
-                {
-                    ctx.Reviews.Remove(entity);
-                    return ctx.SaveChanges() == 1;
-                }
-                return false;
+                var entity =
+                    ctx
+                        .Reviews
+                        .Single(e => e.ReviewId == reviewId && e.OwnerId == _userId);
+                return
+                    new ReviewDetails
+                    {
+                        ReviewId = entity.ReviewId,
+                        Text = entity.Text,
+                        Rating = entity.Rating,
+                        DateOfReview = entity.DateOfReview,
+                    };
             }
         }
-        
+
+        public bool UpdateReview(ReviewEdit review)
+        {
+            using (var ctx = new ApplicationDbContext())
+            {
+                var entity =
+                    ctx
+                        .Reviews
+                        .Single(e => e.ReviewId == review.ReviewId && e.OwnerId == _userId);
+
+                entity.ReviewId = review.ReviewId;
+                entity.Text = review.Text;
+                entity.Rating = review.Rating;
+
+                return ctx.SaveChanges() == 1;
+            }
+        }
+
+        public bool DeleteReview(int reviewId)
+        {
+            using (var ctx = new ApplicationDbContext())
+            {
+                var entity =
+                    ctx
+                        .Reviews
+                        .Single(e => e.ReviewId == reviewId && e.OwnerId == _userId);
+
+                ctx.Reviews.Remove(entity);
+
+                return ctx.SaveChanges() == 1;
+            }
+        }
     }
 }
