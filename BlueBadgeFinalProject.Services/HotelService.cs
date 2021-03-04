@@ -28,7 +28,6 @@ namespace BlueBadgeFinalProject.Services
                 OwnerId = _UserId,
                 HotelName = hotel.Name,
                 Location = hotel.Location,
-                HasFreeParking = hotel.HasFreeParking
 
             };
             using (var ctx = new ApplicationDbContext())
@@ -48,21 +47,7 @@ namespace BlueBadgeFinalProject.Services
                     {
                         HotelId = e.HotelId,
                         Name = e.HotelName,
-                        Customers = e.Customers.Select(
-                            x => new CustomerList
-                            {
-                                CustomerId = x.CustomerId,
-                                FullName = x.FirstName + " " + x.LastName,
-                                Transactions = x.Transactions.Select(
-                          z => new TransactionListItem
-                          {
-                              TransactionId = z.TransactionId,
-                              DateOfTransaction = z.DateOfTransaction,
-  
-                          }).ToList(),
-                            }).ToList(),
-
-                             VacationPackages = e.VacationPackages.Select(
+                        VacationPackages = e.VacationPackages.Select(
                             y => new VacationPackageListItem
                             {
                                 VacId = y.VacId,
@@ -87,22 +72,6 @@ namespace BlueBadgeFinalProject.Services
                         HotelId = entity.HotelId,
                         HotelName = entity.HotelName,
                         Location=entity.Location,
-                        HasFreeParking=entity.HasFreeParking,
-   
-                        Customers = entity.Customers.Select(
-                            x => new CustomerList
-                            {
-                                CustomerId = x.CustomerId,
-                                FullName = x.FirstName + " " + x.LastName,
-                                Transactions = x.Transactions.Select(
-                          z => new TransactionListItem
-                          {
-                              TransactionId = z.TransactionId,
-                              DateOfTransaction = z.DateOfTransaction,
-  
-                          }).ToList(),
-                            }).ToList(),
-
                         VacationPackages = entity.VacationPackages.Select(
                             y => new VacationPackageListItem
                             {
@@ -124,7 +93,6 @@ namespace BlueBadgeFinalProject.Services
                 entity.HotelId = hotel.HotelId;
                 entity.HotelName = hotel.Name;
                 entity.Location = hotel.Location;
-                entity.HasFreeParking = hotel.HasFreeParking;
                 return ctx.SaveChanges() == 1;
             }
         }

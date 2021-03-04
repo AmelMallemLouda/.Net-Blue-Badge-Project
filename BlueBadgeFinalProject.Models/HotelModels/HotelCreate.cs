@@ -15,7 +15,5 @@ namespace BlueBadgeFinalProject.Models.HotelModels
         [Required]
         [MinLength(10, ErrorMessage = "Please enter at least 10 characters.")]
         public string Location { get; set; }
-        [Required]
-        public bool HasFreeParking { get; set; }
     }
 }
