@@ -12,11 +12,18 @@ namespace BlueBadgeFinalProject.Models.HotelCustomer
     public class JunctionList
     {
         public int Id { get; set; }
+
         public int CustomerId { get; set; }
         public CustomerList Customers { get; set; }
+
         public int HotelId { get; set; }
         public HotelList Hotels { get; set; }
-        public int ReviewId { get; set; }
+
+        public int? ReviewId { get; set; }
         public ReviewListItem Review { get; set; }
+
+
+
+
     }
 }

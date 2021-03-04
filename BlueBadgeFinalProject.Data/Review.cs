@@ -24,10 +24,5 @@ namespace BlueBadgeFinalProject.Data
 
         [Required]
         public Guid OwnerId { get; set; }
-
-        //[Required]
-        //[ForeignKey(nameof(Hotels))]
-        //public int HotelId { get; set; }
-        //public virtual Hotel Hotels { get; set; }
     }
 }

@@ -12,13 +12,14 @@ namespace BlueBadgeFinalProject.Data
         [Key]
         public int Id { get; set; }
 
+        [Required]
         public int HotelId { get; set; }
         public virtual Hotel Hotel { get; set; }
-
+        [Required]
         public int CustomerId { get; set; }
         public virtual Customer Customer { get; set; }
-
-        public int ReviewId { get; set; }
+        
+        public int? ReviewId { get; set; }
         public virtual Review Review { get; set; }
     }
 }
