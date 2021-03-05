@@ -42,19 +42,19 @@ Hello all who decided to use our app to help book their next destination for an 
 
 >Technologies:
 
-.Net Framework C#
+ .Net Framework C#
 
-PostMan
+ PostMan
 
-Trello
+ Trello
 
-GoogleDocs\
+ GoogleDocs\
 
 >Launch
 
-Visual Studio Community 2019 
+ Visual Studio Community 2019 
 
-Microsoft .Net Framework
+ Microsoft .Net Framework
 
 
 
