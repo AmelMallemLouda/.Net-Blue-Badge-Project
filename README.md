@@ -1,4 +1,4 @@
-## *****Vacation-Destination.com*****
+## *****Vacation-Destination.com Hotel*****
 Hello all who decided to use our app to help book their next destination for an unforgettable vacation. Using our platform makes booking a breeze while giving you everything you need to know about your selection, and the ability to let other users know which places are a must to go to. Finally enjoy our exclusive benefits and special surprises with our vacation packages through our partnerships.
 
 ## Using The Application
@@ -23,6 +23,15 @@ Hello all who decided to use our app to help book their next destination for an 
 
 > Super Fixers [EFA Help Queue](https://efahelpqueue.azurewebsites.net/Login).
 
-> Help from [Stack Overflow](https://stackoverflow.com/).
+> Help from: -https://docs.google.com/document/d/1Op7j_IquVbA_HVvAezdcjxJbHDtimHq7ugNtx4ojC1I/edit
+             -[Stack Overflow](https://stackoverflow.com/)
+             -https://stackify.com/restsharp/
+	     -https://www.c-sharpcorner.com/article/creating-web-api-and-consuming-in-console-application-using-web-client-in-a-sync/
+	     -https://www.youtube.com/watch?v=qm29vYcYBeg
+	     -https://www.youtube.com/watch?v=YoQE3_iUXgk
+	     -https://www.youtube.com/watch?v=Ry45EkZQ2CM
 
 > Written with [StackEdit](https://stackedit.io/).
+
+
+
