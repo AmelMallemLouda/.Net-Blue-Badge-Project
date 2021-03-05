@@ -50,7 +50,7 @@ Hello all who decided to use our app to help book their next destination for an 
 
  GoogleDocs\
 
->Launch
+>Launch:
 
  Visual Studio Community 2019 
 
