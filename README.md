@@ -24,12 +24,17 @@ Hello all who decided to use our app to help book their next destination for an 
 > Super Fixers [EFA Help Queue](https://efahelpqueue.azurewebsites.net/Login).
 
 > Help from: 
-> -https://docs.google.com/document/d/1Op7j_IquVbA_HVvAezdcjxJbHDtimHq7ugNtx4ojC1I/edit
-> [Stack Overflow](https://stackoverflow.com/)
-> https://www.c-sharpcorner.com/article/creating-web-api-and-consuming-in-console-application-using-web-client-in-a-sync/
-> https://www.youtube.com/watch?v=qm29vYcYBeg
-> https://www.youtube.com/watch?v=YoQE3_iUXgk
-> https://www.youtube.com/watch?v=Ry45EkZQ2CM
+> -https://docs.google.com/document/d/1Op7j_IquVbA_HVvAezdcjxJbHDtimHq7ugNtx4ojC1I/edit.
+ 
+> [Stack Overflow](https://stackoverflow.com/).
+
+> https://www.c-sharpcorner.com/article/creating-web-api-and-consuming-in-console-application-using-web-client-in-a-sync/.
+
+> https://www.youtube.com/watch?v=qm29vYcYBeg.
+
+> https://www.youtube.com/watch?v=YoQE3_iUXgk.
+ 
+> https://www.youtube.com/watch?v=Ry45EkZQ2CM.
 
 > Written with [StackEdit](https://stackedit.io/).
  
