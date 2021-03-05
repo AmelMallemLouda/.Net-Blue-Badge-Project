@@ -17,7 +17,7 @@ namespace BlueBadgeFinalProject.Services
             _userId = userId;
         }
 
-        public bool CeateVacationPackage(VacationPackageCreate vacpac)
+        public bool CreateVacationPackage(VacationPackageCreate vacpac)
         {
             var entity = new VacationPackage()
             {

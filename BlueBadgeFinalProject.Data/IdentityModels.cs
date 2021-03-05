@@ -49,8 +49,6 @@ namespace BlueBadgeFinalProject.Data
 
         public DbSet<Review> Reviews { get; set; }
 
-      
-
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             modelBuilder

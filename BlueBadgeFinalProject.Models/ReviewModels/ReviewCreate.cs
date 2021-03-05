@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BlueBadgeFinalProject.Models.ReviewModles
+namespace BlueBadgeFinalProject.Models.ReviewModels
 {
     public class ReviewCreate
     {
@@ -14,6 +14,5 @@ namespace BlueBadgeFinalProject.Models.ReviewModles
         [MaxLength(10000, ErrorMessage = "There are too many characters in this field.")]
         public string Text { get; set; }
         public double Rating { get; set; }
-      
     }
 }

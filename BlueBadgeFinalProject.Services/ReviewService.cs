@@ -1,5 +1,5 @@
 ﻿using BlueBadgeFinalProject.Data;
-using BlueBadgeFinalProject.Models.ReviewModles;
+using BlueBadgeFinalProject.Models.ReviewModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;

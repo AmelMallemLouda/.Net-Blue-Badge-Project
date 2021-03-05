@@ -9,6 +9,5 @@ namespace BlueBadgeFinalProject.Models.HotelModels
         public int HotelId { get; set; }
         public string Name { get; set; }
         public List<VacationPackageListItem> VacationPackages { get; set; } = new List<VacationPackageListItem>();
-        //public List<ReviewListItem> Reviews{ get; set; } = new List<ReviewListItem>();
     }
 }

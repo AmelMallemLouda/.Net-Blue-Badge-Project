@@ -50,8 +50,8 @@ namespace BlueBadgeFinalProject.Services
                                 new TransactionListItem
                                 {
                                     TransactionId = e.TransactionId,
+                                    Price = e.Price,
                                     DateOfTransaction = e.DateOfTransaction,
- 
                                 });     
 
                 return query.ToArray(); 
@@ -70,7 +70,7 @@ namespace BlueBadgeFinalProject.Services
                     new TransactionDetail
                     {
                         TransactionId = entity.TransactionId,
-                       CustomerId=entity.CustomerId,
+                        CustomerId=entity.CustomerId,
                         Price = entity.Price,
                         DateOfTransaction = entity.DateOfTransaction,
                         ModifiedUtc=entity.ModifiedUtc

@@ -79,8 +79,6 @@ namespace BlueBadgeFinalProject.Services
                                 Price = y.Price,
                                 VacPacName = y.VacationPackageName,
                             }).ToList(),
-
-                     
                     };
                 }
         }

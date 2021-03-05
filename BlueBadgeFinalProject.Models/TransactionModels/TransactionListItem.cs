@@ -11,5 +11,6 @@ namespace BlueBadgeFinalProject.Models.TransactionModels
     {
         public int TransactionId { get; set; }
         public DateTime DateOfTransaction { get; set; }
+        public double Price { get; set; }
     }
 }

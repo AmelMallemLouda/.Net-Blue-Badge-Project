@@ -69,10 +69,10 @@
     <Compile Include="HotelModels\HotelEdit.cs" />
     <Compile Include="HotelModels\HotelList.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="ReviewModles\ReviewCreate.cs" />
-    <Compile Include="ReviewModles\ReviewDetails.cs" />
-    <Compile Include="ReviewModles\ReviewEdit.cs" />
-    <Compile Include="ReviewModles\ReviewListItem.cs" />
+    <Compile Include="ReviewModels\ReviewCreate.cs" />
+    <Compile Include="ReviewModels\ReviewDetails.cs" />
+    <Compile Include="ReviewModels\ReviewEdit.cs" />
+    <Compile Include="ReviewModels\ReviewListItem.cs" />
     <Compile Include="VacationEdit.cs" />
     <Compile Include="VacationPackageCreate.cs" />
     <Compile Include="VacationPackageDetail.cs" />

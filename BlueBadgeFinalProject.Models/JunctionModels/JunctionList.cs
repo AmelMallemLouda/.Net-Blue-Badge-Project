@@ -1,6 +1,6 @@
 ﻿using BlueBadgeFinalProject.Models.CustomerFolder;
 using BlueBadgeFinalProject.Models.HotelModels;
-using BlueBadgeFinalProject.Models.ReviewModles;
+using BlueBadgeFinalProject.Models.ReviewModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -21,9 +21,5 @@ namespace BlueBadgeFinalProject.Models.HotelCustomer
 
         public int? ReviewId { get; set; }
         public ReviewListItem Review { get; set; }
-
-
-
-
     }
 }

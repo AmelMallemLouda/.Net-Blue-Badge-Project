@@ -3,7 +3,7 @@ using BlueBadgeFinalProject.Models;
 using BlueBadgeFinalProject.Models.CustomerFolder;
 using BlueBadgeFinalProject.Models.HotelCustomer;
 using BlueBadgeFinalProject.Models.HotelModels;
-using BlueBadgeFinalProject.Models.ReviewModles;
+using BlueBadgeFinalProject.Models.ReviewModels;
 using BlueBadgeFinalProject.Models.TransactionModels;
 using System;
 using System.Collections.Generic;
@@ -56,8 +56,6 @@ namespace BlueBadgeFinalProject.Services
                               DateOfTransaction = z.DateOfTransaction,
 
                           }).ToList(),
-
-
                     },
                     HotelId=e.HotelId,
                     Hotels=new HotelList()
@@ -80,7 +78,6 @@ namespace BlueBadgeFinalProject.Services
                         Rating=e.Review.Rating,
                         DateOfReview=e.Review.DateOfReview
                     }
-
                 });
                 return query.ToArray();
             }
@@ -90,7 +87,6 @@ namespace BlueBadgeFinalProject.Services
         {
             using (var ctx = new ApplicationDbContext())
             {
-
                 var entity = ctx.HotelCustomers.Single(e => e.Id == hotelCustomerId);
                 ctx.HotelCustomers.Remove(entity);
                 return ctx.SaveChanges() == 1;
