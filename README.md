@@ -22,11 +22,11 @@ Hello all who decided to use our app to help book their next destination for an 
 -ex  https://localhost:XXXXX/api/Hotel/(id)
 
 - How To Use Console Application
-	-In Visual Studio, right click on "Solution 'BlueBadgeFinalProject'" and click on "Properties."
-	-Check option for "Multiple startup projects". Change options for BlueBadgeFinalProject.WebAPI and BlueBadgeFinalProject.Console to Start. Click OK.
-	-Get Authorization token from Postman (POST https://localhost:XXXXX/token). Go to "BlueBadgeFinalProject_Console" and click on "CustomerAPI" class. Copy token and paste 	 at the top of the page next to "private string AuthorizationKey =" (It should look like this: private string AuthorizationKey = "enter token here";).
-	-Follow the token instructions above for "HotelAPI", "JunctionAPI", "ProgramUI", "ReviewAPI", "TransactionAPI", and "VacationPackageAPI." 
-	-Click Start at the top of the page in Visual Studio and follow instructions in the console. It currently has the options to display all data and delete data from    		database. 
+	- In Visual Studio, right click on "Solution 'BlueBadgeFinalProject'" and click on "Properties."
+	- Check option for "Multiple startup projects". Change options for BlueBadgeFinalProject.WebAPI and BlueBadgeFinalProject.Console to Start. Click OK.
+	- Get Authorization token from Postman (POST https://localhost:XXXXX/token). Go to "BlueBadgeFinalProject_Console" and click on "CustomerAPI" class. Copy token and paste 	  at the top of the page next to "private string AuthorizationKey =" (It should look like this: private string AuthorizationKey = "enter token here";).
+	- Follow the token instructions above for "HotelAPI", "JunctionAPI", "ProgramUI", "ReviewAPI", "TransactionAPI", and "VacationPackageAPI." 
+	- Click Start at the top of the page in Visual Studio and follow instructions in the console. It currently has the options to display all data and delete data from    		database. 
 	
 > Super Fixers [EFA Help Queue](https://efahelpqueue.azurewebsites.net/Login).
 
