@@ -73,14 +73,14 @@
     <Compile Include="ReviewModles\ReviewDetails.cs" />
     <Compile Include="ReviewModles\ReviewEdit.cs" />
     <Compile Include="ReviewModles\ReviewListItem.cs" />
-    <Compile Include="VacationEdit.cs" />
-    <Compile Include="VacationPackageCreate.cs" />
-    <Compile Include="VacationPackageDetail.cs" />
-    <Compile Include="VacationPackageListItem.cs" />
     <Compile Include="TransactionModels\TransactionCreate.cs" />
     <Compile Include="TransactionModels\TransactionDetail.cs" />
     <Compile Include="TransactionModels\TransactionEdit.cs" />
     <Compile Include="TransactionModels\TransactionListItem.cs" />
+    <Compile Include="VacationPackageModles\VacationEdit.cs" />
+    <Compile Include="VacationPackageModles\VacationPackageCreate.cs" />
+    <Compile Include="VacationPackageModles\VacationPackageDetail.cs" />
+    <Compile Include="VacationPackageModles\VacationPackageListItem.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

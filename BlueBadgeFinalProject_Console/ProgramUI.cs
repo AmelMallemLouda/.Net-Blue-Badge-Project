@@ -16,6 +16,7 @@ namespace BlueBadgeFinalProject_Console
         private readonly TransactionAPI transactionAPI = new TransactionAPI(AuthorizationKey);
         private readonly ReviewAPI reviewsAPI = new ReviewAPI(AuthorizationKey);
         private readonly VacationPackageAPI vacPacAPI = new VacationPackageAPI(AuthorizationKey);
+        private readonly JunctionAPI junctionAPI = new JunctionAPI(AuthorizationKey);
         public void Run()
         {
             Menu();
@@ -38,8 +39,9 @@ namespace BlueBadgeFinalProject_Console
                     "2.Show All Customers\n" +
                     "3.Show All Transactions\n" +
                     "4.Show All Reviews\n"+
-                    "5.Show All Vacation Packages\n"+                  
-                    "6.Exit\n");
+                    "5.Show All Vacation Packages\n" +
+                    "6.Show All Junctions\n"+                  
+                    "7.Exit\n");
                 string input = Console.ReadLine();
                 switch (input)
                 {
@@ -59,6 +61,9 @@ namespace BlueBadgeFinalProject_Console
                         ShowAllVacationPackages();
                         break;
                     case "6":
+                        ShowAllJunctions();
+                        break;
+                    case "7":
                         keepRunning = false;
                         break;
                     default:
@@ -101,7 +106,7 @@ namespace BlueBadgeFinalProject_Console
                 Console.WriteLine(hotelArray);
             }
 
-           
+            DeleteHotel();
         }
 
         private void ShowAllCustomers()
@@ -185,8 +190,8 @@ namespace BlueBadgeFinalProject_Console
         private void ShowAllVacationPackages()
         {
             Console.Clear();
-            string VacPac = "List Of Vaction Packages:";
-            Console.WriteLine(VacPac);
+            string vacPac = "List Of Vaction Packages:";
+            Console.WriteLine(vacPac);
             var result= vacPacAPI.GetAllVacPacs();
             string listOfVacPacs = result.responseContent;
             string errorMessage=result.errorMessage;
@@ -209,8 +214,131 @@ namespace BlueBadgeFinalProject_Console
 
         }
 
+        private void ShowAllJunctions()
+        {
+            Console.Clear();
+            string junctions = "List of junctions:";
+            Console.WriteLine(junctions);
+            var result = junctionAPI.GetJunctions();
+            string ListOfJunctions = result.responseContent;
+            string errorMessage = result.errorMessage;
+            //if there is an error
+            if (errorMessage != "")
+            {
+                Console.Clear();
+                Console.WriteLine($"\n{errorMessage}");
+                Console.WriteLine("\nPress any key to return to main menu");
+                Console.ReadLine();
+                return;
+            }
+            else
+            {
+                Console.WriteLine("");
+                JArray junctionArray = JArray.Parse(ListOfJunctions);
+                Console.WriteLine(junctionArray);
+            }
+        }
+        private void RemoveHotel()
+        {
+            bool KeepRunning = true;
+
+            while (KeepRunning)
+            {
+
+                Console.Write("\nEnter Hotel ID: ");
+
+                int hotelId = 0;
+
+                if (int.TryParse(Console.ReadLine(), out hotelId))
+                {
+                    string errorMessage = hotelAPI.DeleteHotel(hotelId);
+
+                    //if there is an error message,int.TryParse successful or unsuccessful.
+                    if (errorMessage != "")
+                    {
+                        Console.WriteLine($"\n{errorMessage}");
+                        Console.WriteLine("\nPress any key to return to main menu");
+                        Console.ReadLine();
+                        return;
+                    }
+                    Console.WriteLine("\nThe hotel has been Deleted");
+                }
+                else
+                {
+                    Console.WriteLine("\nInvalid input. Hotel Id should be numerical");
+                    Console.WriteLine("Press any key to continue.");
+                    Console.ReadLine();
+                    return;
+                }
+
+                Console.WriteLine("\nWould you Like to Delete another hotel?(y/n)");
+
+                string input = Console.ReadLine();
+
+                switch (input)
+                {
+                    case "y":
+                        RemoveHotel();
+                        break;
+                    case "n":
+                        Console.WriteLine("\nPress any key to return to main menu.");
+                        Console.ReadKey();
+                        Menu();
+                        break;
+                    default:
+                        Console.Clear();
+                        Console.WriteLine("Invalid choice.\n");
+                        Console.WriteLine("Press any key to return to main menu\n.");
+                        Console.ReadKey();
+                        break;
+                }
+
+                if (input == "yes")
+                {
+                    RemoveHotel();
+                }
+                else
+                {
+                    Console.WriteLine("\nPress any key to return to main menu");
+                    Console.ReadLine();
+                    return;
+                }
+                    KeepRunning = false;
+            }
+        }
+
        
-      
+
+        public void DeleteHotel()
+        {
+            bool keepRunning = true;
+            while (keepRunning)
+            {
+                Console.WriteLine("\nChoose an option: \n" +
+                    "1.Delete Hotel.\n" +
+                    "2.Go back to the main menu.\n");
+                string input = Console.ReadLine();
+
+                switch (input)
+                {
+                    case "1":
+                        RemoveHotel();
+                        break;
+                    case "2":
+                        Menu();
+                        break;
+                    default:
+                        Console.Clear();
+                        Console.WriteLine("Invalid choice.\n");
+                        Console.WriteLine("Press any key to return to main menu.");
+                        Console.ReadKey();
+                        break;
+                }
+            }
+        }
+
+
+
 
 
 

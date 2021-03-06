@@ -11,8 +11,7 @@ namespace BlueBadgeFinalProject.Models.CustomerFolder
     {
         public int CustomerId { get; set; }
         public string FirstName { get; set; }
-        public string LastName { get; set; }
-        public string EmailAddress { get; set; }
+        public string LastName { get; set; }     
         [DataType(DataType.PhoneNumber)]
         public string PhoneNumber { get; set; }
         public bool HasMemberShip { get; set; }

@@ -16,11 +16,11 @@ namespace BlueBadgeFinalProject.Services
     public class JunctionService
     {
 
-        private readonly Guid _userId;
-        public  JunctionService(Guid userId)
-        {
-            _userId = userId;
-        }
+        //private readonly Guid _userId;
+        //public  JunctionService(Guid userId)
+        //{
+        //    _userId = userId;
+        //}
 
         public bool CreateHotelCustomer(JunctionCreate model)
         {

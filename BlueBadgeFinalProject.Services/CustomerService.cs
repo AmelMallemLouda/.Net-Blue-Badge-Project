@@ -90,7 +90,6 @@ namespace BlueBadgeFinalProject.Services
                 entity.CustomerId = customer.CustomerId;
                 entity.FirstName = customer.FirstName;
                 entity.LastName = customer.LastName;
-                entity.EmailAddress = customer.EmailAddress;
                 entity.PhoneNumber = customer.PhoneNumber;
            
                 return ctx.SaveChanges() == 1;

@@ -52,6 +52,7 @@
   <ItemGroup>
     <Compile Include="CustomerAPI.cs" />
     <Compile Include="HotelAPI.cs" />
+    <Compile Include="JunctionAPI.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="ProgramUI.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
