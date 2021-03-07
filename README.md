@@ -68,4 +68,5 @@ Hello all who decided to use our app to help book their next destination for an 
  Microsoft .Net Framework
 
 ![DataTabales](/Images/snipp1.PNG)
-
+![DataTabales](/Images/snipp2.PNG)
+![DataTabales](/Images/snipp3.PNG)
