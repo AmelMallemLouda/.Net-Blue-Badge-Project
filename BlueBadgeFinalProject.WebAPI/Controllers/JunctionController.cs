@@ -12,35 +12,35 @@ namespace BlueBadgeFinalProject.WebAPI.Controllers
 {
     public class JunctionController : ApiController
     {
-        private JunctionService CreateHotelCustomerService()
+        private JunctionService CreateJunctionService()
         {
             var userId = Guid.Parse(User.Identity.GetUserId());
-            var HotelCustomerService = new JunctionService(userId);
-            return HotelCustomerService;
+            var junctionService = new JunctionService(userId);
+            return junctionService;
         }
         public IHttpActionResult Get()
         {
-            JunctionService hotelCustomerService = CreateHotelCustomerService();
-            var hotelCustomers = hotelCustomerService.GetAllHotelCustomers();
-            return Ok(hotelCustomers);
+            JunctionService junctionService = CreateJunctionService();
+            var junctions = junctionService.GetAllJunctions();
+            return Ok(junctions);
         }
-        public IHttpActionResult Post(JunctionCreate hotelCustomer)
+        public IHttpActionResult Post(JunctionCreate junction)
         {
             if (!ModelState.IsValid)
                 return BadRequest(ModelState);
-            var service = CreateHotelCustomerService();
-            if (!service.CreateHotelCustomer(hotelCustomer))
+            var service = CreateJunctionService();
+            if (!service.CreateJunction(junction))
                 return InternalServerError();
-            return Ok("The HotelCustomer has been created.");
+            return Ok("The junction has been created.");
         }
-        public IHttpActionResult Delete(int hotelCustomerId)
+        public IHttpActionResult Delete(int junctionId)
         {
-            var service = CreateHotelCustomerService();
+            var service = CreateJunctionService();
 
-            if (!service.DeleteHotelCustomer(hotelCustomerId))
+            if (!service.DeleteJunction(junctionId))
                 return InternalServerError();
 
-            return Ok("The HotelCustomer has been deleted.");
+            return Ok("The junction has been deleted.");
         }
     }
 }

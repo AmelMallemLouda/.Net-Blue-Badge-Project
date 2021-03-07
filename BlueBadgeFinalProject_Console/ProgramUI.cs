@@ -293,17 +293,6 @@ namespace BlueBadgeFinalProject_Console
                         Console.ReadKey();
                         break;
                 }
-
-                if (input == "yes")
-                {
-                    RemoveHotel();
-                }
-                else
-                {
-                    Console.WriteLine("\nPress any key to return to main menu");
-                    Console.ReadLine();
-                    return;
-                }
                     KeepRunning = false;
             }
         }
@@ -337,11 +326,5 @@ namespace BlueBadgeFinalProject_Console
                 }
             }
         }
-
-
-
-
-
-
     }
 }

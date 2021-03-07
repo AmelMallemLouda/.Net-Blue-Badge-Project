@@ -35,18 +35,6 @@ namespace BlueBadgeFinalProject.WebAPI.Controllers
                 return InternalServerError();
             return Ok("The vacation package has been created.");
         }
-        //public IHttpActionResult Post(VacationPackageCreate vacPac)
-        //{
-        //    if (!ModelState.IsValid)
-        //        return BadRequest(ModelState);
-
-        //    var service = CreateVacPacService();
-
-        //    if (!service.CreateVacPac(vacPac))
-        //        return InternalServerError();
-
-        //    return Ok();
-        //}
 
         public IHttpActionResult Get(int id)
         {

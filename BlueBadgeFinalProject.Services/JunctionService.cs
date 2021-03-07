@@ -22,7 +22,7 @@ namespace BlueBadgeFinalProject.Services
             _userId = userId;
         }
 
-        public bool CreateHotelCustomer(JunctionCreate model)
+        public bool CreateJunction(JunctionCreate model)
         {
             var entity = new Junction()
             {
@@ -32,16 +32,16 @@ namespace BlueBadgeFinalProject.Services
             };
             using (var ctx = new ApplicationDbContext())
             {
-                ctx.HotelCustomers.Add(entity);
+                ctx.Junctions.Add(entity);
                 return ctx.SaveChanges() == 1;
             }
         }
 
-        public IEnumerable<JunctionList> GetAllHotelCustomers()
+        public IEnumerable<JunctionList> GetAllJunctions()
         {
             using (var ctx= new ApplicationDbContext())
             {
-                var query = ctx.HotelCustomers.Select(e => new JunctionList
+                var query = ctx.Junctions.Select(e => new JunctionList
                 {
                     Id = e.Id,
                     CustomerId = e.CustomerId,
@@ -86,16 +86,15 @@ namespace BlueBadgeFinalProject.Services
             }
         }
 
-        public bool DeleteHotelCustomer(int hotelCustomerId)
+        public bool DeleteJunction(int junctionId)
         {
             using (var ctx = new ApplicationDbContext())
             {
 
-                var entity = ctx.HotelCustomers.Single(e => e.Id == hotelCustomerId);
-                ctx.HotelCustomers.Remove(entity);
+                var entity = ctx.Junctions.Single(e => e.Id == junctionId);
+                ctx.Junctions.Remove(entity);
                 return ctx.SaveChanges() == 1;
-            }
-                    
+            }          
         }
     }
 }
