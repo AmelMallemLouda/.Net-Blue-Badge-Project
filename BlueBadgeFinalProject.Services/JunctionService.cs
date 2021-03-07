@@ -22,7 +22,7 @@ namespace BlueBadgeFinalProject.Services
             _userId = userId;
         }
 
-        public bool CreateHotelCustomer(JunctionCreate model)
+        public bool CreateJunction(JunctionCreate model)
         {
             var entity = new Junction()
             {
@@ -37,7 +37,7 @@ namespace BlueBadgeFinalProject.Services
             }
         }
 
-        public IEnumerable<JunctionList> GetAllHotelCustomers()
+        public IEnumerable<JunctionList> GetAllJunctions()
         {
             using (var ctx= new ApplicationDbContext())
             {
@@ -86,7 +86,7 @@ namespace BlueBadgeFinalProject.Services
             }
         }
 
-        public bool DeleteHotelCustomer(int hotelCustomerId)
+        public bool DeleteJunction(int hotelCustomerId)
         {
             using (var ctx = new ApplicationDbContext())
             {
