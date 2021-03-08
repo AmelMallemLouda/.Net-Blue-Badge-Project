@@ -224,15 +224,12 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\CustomerController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
-<<<<<<< HEAD
     <Compile Include="Controllers\JunctionController.cs" />
     <Compile Include="Controllers\ReviewController.cs" />
     <Compile Include="Controllers\VacPacController.cs" />
     <Compile Include="Controllers\HotelController.cs" />
     <Compile Include="Controllers\TransactionController.cs" />
-=======
     <Compile Include="Controllers\HotelController.cs" />
->>>>>>> cc3df5e25b7e6141de1dd4b25d8b42a7be3949f5
     <Compile Include="Controllers\ValuesController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>

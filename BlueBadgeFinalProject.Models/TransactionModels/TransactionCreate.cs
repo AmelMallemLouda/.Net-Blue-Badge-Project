@@ -13,7 +13,6 @@ namespace BlueBadgeFinalProject.Models.TransactionModels
         [Required]
         public double Price { get; set; }
 
-        [Required]
         public DateTime DateOfTransaction { get; set; }
         public int CustomerId { get; set; }
     }

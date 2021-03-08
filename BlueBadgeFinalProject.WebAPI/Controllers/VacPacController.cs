@@ -53,7 +53,7 @@ namespace BlueBadgeFinalProject.WebAPI.Controllers
             if (!service.UpdateVacPac(vacPac))
                 return InternalServerError();
 
-            return Ok("The vacation package has been updated");
+            return Ok("The vacation package has been updated.");
         }
 
         public IHttpActionResult Delete(int id)
@@ -63,7 +63,7 @@ namespace BlueBadgeFinalProject.WebAPI.Controllers
             if (!service.DeleteVacPac(id))
                 return InternalServerError();
 
-            return Ok("The vacation package has been deleted");
+            return Ok("The vacation package has been deleted.");
         }
     }
 }

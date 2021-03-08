@@ -43,4 +43,5 @@ namespace BlueBadgeFinalProject_Console
             return (responseContent, errorMessage);
 
         }
-    }    }  
+    }
+}

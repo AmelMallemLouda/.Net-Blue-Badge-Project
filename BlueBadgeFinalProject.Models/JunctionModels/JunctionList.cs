@@ -22,8 +22,5 @@ namespace BlueBadgeFinalProject.Models.HotelCustomer
         public int? ReviewId { get; set; }
         public ReviewListItem Review { get; set; }
 
-
-
-
     }
 }

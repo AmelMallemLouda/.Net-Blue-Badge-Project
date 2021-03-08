@@ -9,7 +9,6 @@ namespace BlueBadgeFinalProject.Models.HotelModels
         public string HotelName { get; set; }
         public string Location { get; set; }
         public virtual List<VacationPackageListItem> VacationPackages { get; set; } = new List<VacationPackageListItem>();
-
   
     }
 }
