@@ -9,11 +9,16 @@ namespace BlueBadgeFinalProject.Models.CustomerFolder
 {
    public class CustomerCreate
     {
+        [Required]
         public string FirstName { get; set; }
+        [Required]
         public string LastName { get; set; }
+        [Required]
         [DataType(DataType.PhoneNumber)]
         public string PhoneNumber { get; set; }
+        [Required]
         public string EmailAddress { get; set; }
+
         public int HotelId { get; set; }
         
     }

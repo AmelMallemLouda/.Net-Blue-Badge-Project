@@ -35,18 +35,6 @@ namespace BlueBadgeFinalProject.WebAPI.Controllers
                 return InternalServerError();
             return Ok("The vacation package has been created.");
         }
-        //public IHttpActionResult Post(VacationPackageCreate vacPac)
-        //{
-        //    if (!ModelState.IsValid)
-        //        return BadRequest(ModelState);
-
-        //    var service = CreateVacPacService();
-
-        //    if (!service.CreateVacPac(vacPac))
-        //        return InternalServerError();
-
-        //    return Ok();
-        //}
 
         public IHttpActionResult Get(int id)
         {
@@ -65,7 +53,7 @@ namespace BlueBadgeFinalProject.WebAPI.Controllers
             if (!service.UpdateVacPac(vacPac))
                 return InternalServerError();
 
-            return Ok();
+            return Ok("The vacation package has been updated");
         }
 
         public IHttpActionResult Delete(int id)
@@ -75,7 +63,7 @@ namespace BlueBadgeFinalProject.WebAPI.Controllers
             if (!service.DeleteVacPac(id))
                 return InternalServerError();
 
-            return Ok();
+            return Ok("The vacation package has been deleted");
         }
     }
 }

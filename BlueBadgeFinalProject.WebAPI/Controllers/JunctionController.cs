@@ -12,7 +12,7 @@ namespace BlueBadgeFinalProject.WebAPI.Controllers
 {
     public class JunctionController : ApiController
     {
-        private JunctionService CreateHotelCustomerService()
+        private JunctionService CreateJUnctionService()
         {
             var userId = Guid.Parse(User.Identity.GetUserId());
             var HotelCustomerService = new JunctionService(userId);
@@ -20,24 +20,24 @@ namespace BlueBadgeFinalProject.WebAPI.Controllers
         }
         public IHttpActionResult Get()
         {
-            JunctionService hotelCustomerService = CreateHotelCustomerService();
-            var hotelCustomers = hotelCustomerService.GetAllHotelCustomers();
+            JunctionService hotelCustomerService = CreateJUnctionService();
+            var hotelCustomers = hotelCustomerService.GetAllJunctions();
             return Ok(hotelCustomers);
         }
         public IHttpActionResult Post(JunctionCreate hotelCustomer)
         {
             if (!ModelState.IsValid)
                 return BadRequest(ModelState);
-            var service = CreateHotelCustomerService();
-            if (!service.CreateHotelCustomer(hotelCustomer))
+            var service = CreateJUnctionService();
+            if (!service.CreateJunction(hotelCustomer))
                 return InternalServerError();
             return Ok("The HotelCustomer has been created.");
         }
         public IHttpActionResult Delete(int hotelCustomerId)
         {
-            var service = CreateHotelCustomerService();
+            var service = CreateJUnctionService();
 
-            if (!service.DeleteHotelCustomer(hotelCustomerId))
+            if (!service.DeleteJunction(hotelCustomerId))
                 return InternalServerError();
 
             return Ok("The HotelCustomer has been deleted.");

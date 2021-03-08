@@ -15,7 +15,6 @@ namespace BlueBadgeFinalProject.Models.CustomerFolder
         public string EmailAddress { get; set; }
         [DataType(DataType.PhoneNumber)]
         public string PhoneNumber { get; set; }    
-        public int HotelId { get; set; }
         public virtual List<TransactionListItem> Transactions { get; set; } = new List<TransactionListItem>();
 
 

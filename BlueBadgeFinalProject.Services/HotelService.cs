@@ -20,7 +20,6 @@ namespace BlueBadgeFinalProject.Services
             _UserId = userId;
         }
 
-        //Create an instance of Hotel
         public bool CreateHotel(HotelCreate hotel)
         {
             var entity = new Hotel()
@@ -37,7 +36,6 @@ namespace BlueBadgeFinalProject.Services
             }
         }
 
-        //Display all Hotels
         public IEnumerable<HotelList> GetHotels()
         {
             using (var ctx = new ApplicationDbContext())

@@ -13,6 +13,7 @@ namespace BlueBadgeFinalProject.Models.ReviewModles
         [MinLength(2, ErrorMessage = "Please enter at least 2 characters.")]
         [MaxLength(10000, ErrorMessage = "There are too many characters in this field.")]
         public string Text { get; set; }
+        [Required]
         public double Rating { get; set; }
       
     }

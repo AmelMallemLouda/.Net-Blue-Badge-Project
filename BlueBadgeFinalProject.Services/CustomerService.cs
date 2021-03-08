@@ -17,7 +17,6 @@ namespace BlueBadgeFinalProject.Services
             _UserId = userId;
         }
 
-        //Create an Instance of customer
 
         public bool CeateCustomer(CustomerCreate customer)
         {
@@ -36,7 +35,6 @@ namespace BlueBadgeFinalProject.Services
                 return ctx.SaveChanges() == 1;
             }
         }
-        //Get all Customers
 
         public IEnumerable<CustomerList> GetAllCustomers()
         {
@@ -52,6 +50,7 @@ namespace BlueBadgeFinalProject.Services
                           {
                               TransactionId = z.TransactionId,
                               DateOfTransaction = z.DateOfTransaction,
+                             
         
                           }).ToList(),
                     });
@@ -59,7 +58,6 @@ namespace BlueBadgeFinalProject.Services
                 return entity.ToArray();
             }
         }
-
         public CustomerDetails GetCustomerById(int customerId)
         {
             using(var ctx=new ApplicationDbContext())
@@ -82,6 +80,7 @@ namespace BlueBadgeFinalProject.Services
             }
         }
 
+        
         public bool UpdateCustomerInformations(CustomerEdit customer)
         {
             using(var ctx= new ApplicationDbContext())

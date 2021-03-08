@@ -293,22 +293,13 @@ namespace BlueBadgeFinalProject_Console
                         break;
                 }
 
-                if (input == "yes")
-                {
-                    RemoveHotel();
-                }
-                else
-                {
-                    Console.WriteLine("\nPress any key to return to main menu");
-                    Console.ReadLine();
-                    return;
-                }
+               
                     KeepRunning = false;
             }
         }
 
        
-
+        // Detailed Menu for Hotel
         public void DeleteHotel()
         {
             bool keepRunning = true;

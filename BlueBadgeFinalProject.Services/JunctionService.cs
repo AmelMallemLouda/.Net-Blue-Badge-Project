@@ -32,7 +32,7 @@ namespace BlueBadgeFinalProject.Services
             };
             using (var ctx = new ApplicationDbContext())
             {
-                ctx.HotelCustomers.Add(entity);
+                ctx.Junctions.Add(entity);
                 return ctx.SaveChanges() == 1;
             }
         }
@@ -41,7 +41,7 @@ namespace BlueBadgeFinalProject.Services
         {
             using (var ctx= new ApplicationDbContext())
             {
-                var query = ctx.HotelCustomers.Select(e => new JunctionList
+                var query = ctx.Junctions.Select(e => new JunctionList
                 {
                     Id = e.Id,
                     CustomerId = e.CustomerId,
@@ -91,8 +91,8 @@ namespace BlueBadgeFinalProject.Services
             using (var ctx = new ApplicationDbContext())
             {
 
-                var entity = ctx.HotelCustomers.Single(e => e.Id == hotelCustomerId);
-                ctx.HotelCustomers.Remove(entity);
+                var entity = ctx.Junctions.Single(e => e.Id == hotelCustomerId);
+                ctx.Junctions.Remove(entity);
                 return ctx.SaveChanges() == 1;
             }
                     

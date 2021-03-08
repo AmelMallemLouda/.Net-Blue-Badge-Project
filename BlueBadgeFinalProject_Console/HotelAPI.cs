@@ -30,6 +30,7 @@ namespace BlueBadgeFinalProject_Console
                 var request = new RestRequest(Method.GET);
                
                 request.AddHeader("Authorization", $"Bearer {AuthorizationKey}");
+                // Container for data sent back from API
                 IRestResponse response = restClient.Execute(request);
                 //if we don't get the 200 ok
                 if (response.StatusCode != HttpStatusCode.OK)
@@ -63,6 +64,7 @@ namespace BlueBadgeFinalProject_Console
                 request.AddHeader("Authorization", $"Bearer {AuthorizationKey}");
                 IRestResponse response = client.Execute(request);
 
+                //the client can continue with its request?
                 if (response.StatusCode != HttpStatusCode.OK)
                 {
                     throw new Exception($"Error Occured: {response.ErrorMessage}");
