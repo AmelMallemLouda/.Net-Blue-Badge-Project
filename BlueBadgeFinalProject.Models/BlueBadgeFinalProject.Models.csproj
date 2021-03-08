@@ -87,10 +87,14 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+<<<<<<< HEAD
     <ProjectReference Include="..\BlueBadgeFinalProject.Data\BlueBadgeFinalProject.Data.csproj">
       <Project>{fd2aea57-1559-4bff-91cf-858afc0ca99c}</Project>
       <Name>BlueBadgeFinalProject.Data</Name>
     </ProjectReference>
+=======
+    <Folder Include="HotelModels\" />
+>>>>>>> cc3df5e25b7e6141de1dd4b25d8b42a7be3949f5
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -60,6 +60,7 @@
   <ItemGroup>
     <Compile Include="JunctionService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+<<<<<<< HEAD
     <Compile Include="ReviewService.cs" />
     <Compile Include="VacationPackageService.cs" />
     <Compile Include="CustomerService.cs" />
@@ -67,6 +68,8 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="TransactionService.cs" />
+=======
+>>>>>>> cc3df5e25b7e6141de1dd4b25d8b42a7be3949f5
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
