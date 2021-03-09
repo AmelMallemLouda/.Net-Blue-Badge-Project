@@ -66,6 +66,8 @@ Hello all who decided to use our app to help book their next destination for an 
  Visual Studio Community 2019 
 
  Microsoft .Net Framework
+ 
+ Help Page API End Point Documentation:
 
 ![DataTabales](/Images/snipp1.PNG)
 ![DataTabales](/Images/snipp2.PNG)
