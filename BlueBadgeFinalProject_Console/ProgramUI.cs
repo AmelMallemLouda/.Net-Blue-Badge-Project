@@ -47,7 +47,6 @@ namespace BlueBadgeFinalProject_Console
                 {
                     case "1":
                         ShowAllHotels();
-                        DeleteMenu();
 
                         break;
                     case "2":
@@ -107,7 +106,28 @@ namespace BlueBadgeFinalProject_Console
                 JArray hotelArray = JArray.Parse(listOfHotels);
                 Console.WriteLine(hotelArray);
             }
+           
+            Console.WriteLine("\nChoose an option: \n" +
+                  "1.Delete Hotel.\n" +
+                  "2.Go back to the main menu.\n");
+            string input = Console.ReadLine();
+            bool keepRunning = true;
 
+            switch (input)
+            {
+                case "1":
+                    RemoveHotel();
+                    break;
+                case "2":
+                    return;
+                    
+                default:
+                    Console.Clear();
+                    Console.WriteLine("Invalid choice.\n");
+                    Console.WriteLine("Press any key to return to main menu.");
+                    Console.ReadKey();
+                    break;
+            }
         }
 
         private void ShowAllCustomers()
@@ -286,8 +306,7 @@ namespace BlueBadgeFinalProject_Console
                     case "n":
                         Console.WriteLine("\nPress any key to return to main menu.");
                         Console.ReadKey();
-                        Menu();
-                        break;
+                        return;
                     default:
                         Console.Clear();
                         Console.WriteLine("Invalid choice.\n");
@@ -302,35 +321,7 @@ namespace BlueBadgeFinalProject_Console
         }
 
        
-        // Detailed Menu for Hotel
-        public void DeleteMenu()
-        {
-            bool keepRunning = true;
-            while (keepRunning)
-            {
-                Console.WriteLine("\nChoose an option: \n" +
-                    "1.Delete Hotel.\n" +
-                    "2.Go back to the main menu.\n");
-                string input = Console.ReadLine();
-
-                switch (input)
-                {
-                    case "1":
-                        RemoveHotel();
-                        break;
-                    case "2":
-                        keepRunning = false;
-
-                        break;
-                    default:
-                        Console.Clear();
-                        Console.WriteLine("Invalid choice.\n");
-                        Console.WriteLine("Press any key to return to main menu.");
-                        Console.ReadKey();
-                        break;
-                }
-            }
-        }
+        
 
 
 
