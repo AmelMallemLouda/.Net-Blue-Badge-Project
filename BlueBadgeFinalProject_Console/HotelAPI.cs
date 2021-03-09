@@ -56,13 +56,13 @@ namespace BlueBadgeFinalProject_Console
 
         //Delete a hotel
         
-        public string DeleteHotel(int stockId)
+        public string DeleteHotel(int HotelId)
         {
             string errorMessage = "";
 
             try
             {
-                var client = new RestClient($"https://localhost:44396/api/hotel/{stockId}");
+                var client = new RestClient($"https://localhost:44396/api/hotel/{HotelId}");
                 var request = new RestRequest(Method.DELETE);
                 request.AddHeader("Authorization", $"Bearer {AuthorizationKey}");
                 IRestResponse response = client.Execute(request);

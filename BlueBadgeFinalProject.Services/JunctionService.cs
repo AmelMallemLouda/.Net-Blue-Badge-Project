@@ -45,11 +45,13 @@ namespace BlueBadgeFinalProject.Services
                 {
                     Id = e.Id,
                     CustomerId = e.CustomerId,
+                    //CustomerList
                     Customers = new CustomerList()
                     {
                         CustomerId = e.CustomerId,
                         FullName = e.Customer.FirstName + " " + e.Customer.LastName,
-                        Transactions=e.Customer.Transactions.Select(
+                        //List<TransactionListItems>
+                        Transactions = e.Customer.Transactions.Select(
                           z => new TransactionListItem
                           {
                               TransactionId = z.TransactionId,
@@ -60,11 +62,13 @@ namespace BlueBadgeFinalProject.Services
 
                     },
                     HotelId=e.HotelId,
-                    Hotels=new HotelList()
+                    //HotelList
+                    Hotels =new HotelList()
                     {
                         HotelId=e.HotelId,
                         Name=e.Hotel.HotelName,
-                        VacationPackages=e.Hotel.VacationPackages.Select(
+                        //List<VacationPackagesListItems>
+                        VacationPackages = e.Hotel.VacationPackages.Select(
                           z => new VacationPackageListItem
                           {
                               VacId = z.VacId,
@@ -74,6 +78,7 @@ namespace BlueBadgeFinalProject.Services
                           }).ToList()         
                     },
                     ReviewId=e.ReviewId,
+                    //ReviewList
                     Review= new ReviewListItem()
                     {
                         ReviewId=e.ReviewId,
