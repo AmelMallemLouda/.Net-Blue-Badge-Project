@@ -72,7 +72,8 @@ namespace BlueBadgeFinalProject.Services
                         Food = entity.Food,
                         Price = entity.Price,
                         Transportation = entity.Transportation,
-                        VacationPackageName = entity.VacationPackageName
+                        VacationPackageName = entity.VacationPackageName,
+                        HotelId=entity.HotelId
                     };
             }
         }
@@ -91,6 +92,7 @@ namespace BlueBadgeFinalProject.Services
                 entity.Transportation = model.Transportation;
                 entity.Flight = model.Flight;
                 entity.Food = model.Food;
+                entity.HotelId = model.HotelId;
 
                 return ctx.SaveChanges() == 1;
             }

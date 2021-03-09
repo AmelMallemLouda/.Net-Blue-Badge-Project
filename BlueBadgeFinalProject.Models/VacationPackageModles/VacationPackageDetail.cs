@@ -14,5 +14,6 @@ namespace BlueBadgeFinalProject.Models
         public string Transportation { get; set; }
         public double Price { get; set; }
         public string Food { get; set; }
+        public int HotelId { get; set; }
     }
 }

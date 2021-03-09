@@ -111,7 +111,7 @@ namespace BlueBadgeFinalProject_Console
                   "1.Delete Hotel.\n" +
                   "2.Go back to the main menu.\n");
             string input = Console.ReadLine();
-            bool keepRunning = true;
+            
 
             switch (input)
             {
