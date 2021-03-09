@@ -28,9 +28,9 @@ Hello all who decided to use our app to help book their next destination for an 
 	- Follow the token instructions above for "HotelAPI", "JunctionAPI", "ProgramUI", "ReviewAPI", "TransactionAPI", and "VacationPackageAPI." 
 	- Click Start at the top of the page in Visual Studio and follow instructions in the console. It currently has the options to display all data and delete hotels from    		database. 
 	
-> Super Fixers [EFA Help Queue](https://efahelpqueue.azurewebsites.net/Login).
+> **Super Fixers** [EFA Help Queue](https://efahelpqueue.azurewebsites.net/Login).
 
-> Help from: 
+> **Help from**: 
 > -https://docs.google.com/document/d/1Op7j_IquVbA_HVvAezdcjxJbHDtimHq7ugNtx4ojC1I/edit.
  
 > -[Stack Overflow](https://stackoverflow.com/).
@@ -47,11 +47,11 @@ Hello all who decided to use our app to help book their next destination for an 
 
 >Eleven Note API Walkthrough https://elevenfifty.instructure.com/courses/517/modules 
 
-> Written with [StackEdit](https://stackedit.io/).
+> **Written with** [StackEdit](https://stackedit.io/).
  
-> Tool teams of developers:https://trello.com/b/mC5ytQ3G/net-blue-badge-project.
+> **Tool teams of developers**:https://trello.com/b/mC5ytQ3G/net-blue-badge-project.
 
->##Technologies:
+>**Technologies**:
 
  .Net Framework C#
 
@@ -61,7 +61,7 @@ Hello all who decided to use our app to help book their next destination for an 
 
  GoogleDocs\
 
->##Launch:
+>**Launch**:
 
  Visual Studio Community 2019 
 
