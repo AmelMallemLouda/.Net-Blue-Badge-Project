@@ -9,7 +9,7 @@ namespace BlueBadgeFinalProject_Console
 {
     public class ProgramUI
     {
-        private static string AuthorizationKey = "BBd5b1VSaHiZDZ4Hhb31NdG5xzOQdvbPeZQn0ac_cGgezIlnKjDkcVvjfWSV8BS46huq218OjP9OUgumywtVMgV27tSXVeYaIE7yyWWKdcaTyQ-xuzX29w3-b353jQ1Icz34BSgnoMu76iEFe6xKulSwwHmziFx-AcNXUHwqIe9FeR6uuWrX7H0ihuImgCEk9QQ-GHWycUxHe_n0ocKbtHjDGf4i4J9ENuoeXwllOOX5IG0VmX8WH81XanzACAV8kaGtVTodixlIHOwskDZfxcqtwrfCuWGZaCiKgQ64r-z3MbUdZ6qebMNAFgSh6dnVB53ZeBLJBM9DEEuNFD-AjrIPwTvowSWlb__YX9D2H6zU0dHp4MctcOmQorJKCk_p2gUD3hrxqMw68pOEGo3Pq5tgADnnz5gFiZctQI5q_9ZUsSAd9Tqm9HdKvog1AJzkeWrNS75XkVAtFhrwBc45qLP3QgYti7cSc9L1XVyktdu58kfMP6gfpdp1iKtw_0LV";
+        private static string AuthorizationKey = "lMwac_8oKKNAw-Zvx2kZedrqqrd4BKtO6VMkn1Zs-Qoyao2AJ2ldjfHclOrru03hZTEzMMouWbzaQeqaXa3w_dAJ-59cEFZx-vFGLi8NabDIn_6_TJ3HV8reiDXKmzWidenqxKtfoSvLPRFcQOU88MeYwXwnyE8hrJFI4DhV34ghWg_SWN21uuyhTNpdcxSjtyq-ntaIKXxsDHTk8CJFKtgE8iCeprfZ0bNPlgY-b-cnlelbOF4HDFhuqha7kalQMP0IdOknE0jZjYOatGJKzsbY7TOL_W9cY0e_11SWVksl-g5Ng083vQqNubas21oPp-L8DzX6JA_u0dkeI5wvF9rg3VyMEdNI-SCKJSpeC1Dwy-_xK14HQbUJ73HJ2kGcRNynBruuxdCgEbvNwnTI3q6h1ejJaaYulmIYGYBNt5eWn9kgqmUA7ImG6VdOuDxXg_7WpJCUzpVv6yu-i3z5FCZKjaEtJOHvl1noZWtKzko";
 
         private readonly HotelAPI hotelAPI = new HotelAPI(AuthorizationKey);
         private readonly CustomerAPI customerIPA = new CustomerAPI(AuthorizationKey);
@@ -47,6 +47,8 @@ namespace BlueBadgeFinalProject_Console
                 {
                     case "1":
                         ShowAllHotels();
+                        DeleteMenu();
+
                         break;
                     case "2":
                         ShowAllCustomers();
@@ -106,7 +108,6 @@ namespace BlueBadgeFinalProject_Console
                 Console.WriteLine(hotelArray);
             }
 
-            DeleteHotel();
         }
 
         private void ShowAllCustomers()
@@ -238,6 +239,8 @@ namespace BlueBadgeFinalProject_Console
                 Console.WriteLine(junctionArray);
             }
         }
+
+       // Helper method
         private void RemoveHotel()
         {
             bool KeepRunning = true;
@@ -247,7 +250,7 @@ namespace BlueBadgeFinalProject_Console
 
                 Console.Write("\nEnter Hotel ID: ");
 
-                int hotelId = 0;
+                int hotelId;
 
                 if (int.TryParse(Console.ReadLine(), out hotelId))
                 {
@@ -294,13 +297,13 @@ namespace BlueBadgeFinalProject_Console
                 }
 
                
-                    KeepRunning = false;
+               KeepRunning = false;
             }
         }
 
        
         // Detailed Menu for Hotel
-        public void DeleteHotel()
+        public void DeleteMenu()
         {
             bool keepRunning = true;
             while (keepRunning)
@@ -316,7 +319,8 @@ namespace BlueBadgeFinalProject_Console
                         RemoveHotel();
                         break;
                     case "2":
-                        Menu();
+                        keepRunning = false;
+
                         break;
                     default:
                         Console.Clear();
