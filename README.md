@@ -51,7 +51,7 @@ Hello all who decided to use our app to help book their next destination for an 
  
 > Tool teams of developers:https://trello.com/b/mC5ytQ3G/net-blue-badge-project.
 
->Technologies:
+>##Technologies:
 
  .Net Framework C#
 
@@ -61,13 +61,13 @@ Hello all who decided to use our app to help book their next destination for an 
 
  GoogleDocs\
 
->Launch:
+>##Launch:
 
  Visual Studio Community 2019 
 
  Microsoft .Net Framework
  
- ## *****Help Page API End Point Documentation:
+ ## *****Help Page API End Point Documentation*****:
 
 ![DataTabales](/Images/snipp1.PNG)
 ![DataTabales](/Images/snipp2.PNG)
